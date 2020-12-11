@@ -1,35 +1,66 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 
-const notes = [
-  {
-    id: 1,
-    content: 'HTML is easy',
-    date: '2019-05-30T17:30:31.098Z',
-    important: true
-  },
-  {
-    id: 2,
-    content: 'Browser can execute only Javascript',
-    date: '2019-05-30T18:39:34.091Z',
-    important: false
-  },
-  {
-    id: 3,
-    content: 'GET and POST are the most important methods of HTTP protocol',
-    date: '2019-05-30T19:20:14.298Z',
-    important: true
-  }];
+const sampleShow = {
+  date: new Date(),
+  venue: 'Logan Street Studio',
+  sets: {
+    setOne: [
+      {
+        id: 1,
+        title: 'Johnny'
+      },
+      {
+        id: 2,
+        title: 'O'
+      },
+      {
+        id: 3,
+        title: 'Go Funk Yourself'
+      }
+    ],
+    setTwo: [
+      {
+        id: 4,
+        title: 'Peace Lily'
+      },
+      {
+        id: 5,
+        title: 'Head 2 Head'
+      },
+      {
+        id: 6,
+        title: 'Tyler\'s Song'
+      }
+    ],
+    encore: [
+      {
+        id: 7,
+        title: 'Diggin a Hole'
+      },
+      {
+        id: 8,
+        title: 'Johnny (reprise)'
+      }
+    ]
+  }
+}
+;
 
 app.use(cors());
 
 app.use(express.json());
 
-// app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/notes', (request, response) => {
-  response.json(notes);
+app.get('/api/show', (request, response) => {
+  response.json(sampleShow);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 const PORT = process.env.PORT || 3001;
