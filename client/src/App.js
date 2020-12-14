@@ -1,26 +1,52 @@
 import React, { useEffect, useState } from 'react';
 
+// component imports
 import Show from './components/Show';
 
-import retrievalService from './services/retrieval';
+// service imports
+import retrieval from './services/retrieval';
 
 const App = () => {
-  const [show, setShow] = useState('');
+  const [songs, setSongs] = useState('');
+  const [shows, setShows] = useState('');
 
   useEffect(() => {
-    retrievalService
-      .getShow()
-      .then(returnedShow => {
-        setShow(returnedShow);
+    retrieval
+      .getSongs()
+      .then(songs => {
+        console.log(songs);
+        setSongs(songs);
+      });
+
+    retrieval
+      .getShows()
+      .then(shows => {
+        console.log(shows);
+        setShows(shows);
       });
   },
   []);
+
   return (
     <div className='App'>
-      {show
-        ? <Show
-          songs={show}
-          />
+      {songs
+        ? <>
+          <h2>Songs played by Mr. Please: </h2>
+          <ul>
+            {songs.map(song => (<li key={song._id}>{song.title}</li>))}
+          </ul>
+          </>
+        : null}
+
+      {shows
+        ? <>
+          {shows.map(show => (
+            <Show
+              key={show._id}
+              info={shows}
+            />
+          ))}
+          </>
         : null}
 
     </div>
