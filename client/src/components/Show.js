@@ -1,16 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const Show = ({ songs }) => {
-//   useEffect(() => {
-//     console.log(songs.sets.setOne);
-//   }, [songs]);
+const Show = ({ info }) => {
+  const setOne = info.sets.setOne;
+  const setTwo = info.sets.setTwo;
+  const encore = info.sets.encore;
 
   return (
 
     <div>
-      <p>Set One: {songs.sets.setOne.map(song => song.title).join(', ')}</p>
-      <p>Set Two: {songs.sets.setTwo.map(song => song.title).join(', ')}</p>
-      <p>Encore: {songs.sets.encore.map(song => song.title).join(', ')}</p>
+      {/* {setOne
+        ? <p>Set One: {setOne.map(song => (
+          <span key={song.id}>{song.name}</span>
+        ))}
+        </p>
+        : null} */}
+      {setOne
+        ? <p>Set One: {setOne.map(song => song.title).join(', ')}</p>
+        : null}
+
+      {setTwo
+        ? <p>Set Two: {setTwo.map(song => song.title).join(', ')}</p>
+        : null}
+
+      {encore
+        ? <p>Encore: {encore.map(song => song.title).join(', ')}</p>
+        : null}
     </div>
 
   );
