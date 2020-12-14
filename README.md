@@ -1,8 +1,8 @@
 # Mr Please
 
-Inspired by the likes of [https://allthings.umphreys.com/](All Things Umphrey's) and [https://phish.net/setlists/phish/](Phish.net), this project will serve as a similar utility for my band, Mr. Please. It will store an interactive history of shows and performances, and eventually be part of the greater general website for the group.
+Inspired by the likes of [All Things Umphrey's](https://allthings.umphreys.com/) and [Phish.net](https://phish.net/setlists/phish/), this project will serve as a similar utility for my band, Mr. Please. It will store an interactive history of shows and performances, and eventually be part of the greater general website for the group.
 
-The project is currently hosted [https://mr-please.herokuapp.com/](here).
+The project is currently hosted [here](https://mr-please.herokuapp.com/).
 
 ## To-do
 
