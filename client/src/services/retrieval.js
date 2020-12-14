@@ -1,12 +1,25 @@
 import axios from 'axios';
-const baseURL = '/api/show/';
+const baseURL = '/api';
 
-const getShow = () => (
-  axios
-    .get(baseURL)
-    .then(res => res.data)
+const getShows = () => (
+  axios({
+    method: 'get',
+    url: '/shows',
+    baseURL: baseURL
+  })
+    .then(response => response.data)
+    .catch(err => console.log(err))
 );
 
-const retrievalService = { getShow };
-export default retrievalService
-;
+const getSongs = () => (
+  axios({
+    method: 'get',
+    url: '/songs',
+    baseURL: baseURL
+  })
+    .then(response => response.data)
+    .catch(err => console.log(err))
+);
+
+const retrieval = { getShows, getSongs };
+export default retrieval;
