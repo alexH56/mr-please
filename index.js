@@ -12,22 +12,24 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api/shows', (request, response) => {
-  Show
-    .find({})
-    .then(shows => {
-      console.log(shows);
-      response.json(shows);
-    })
-    .catch(err => console.log('Error finding shows:', err));
+  response.send('Shows!');
+  // Show
+  //   .find({})
+  //   .then(shows => {
+  //     console.log(shows);
+  //     response.json(shows);
+  //   })
+  //   .catch(err => console.log('Error finding shows:', err));
 });
 
 app.get('/api/songs', (request, response) => {
-  Song
-    .find({})
-    .then(songs => {
-      response.json(songs);
-    })
-    .catch(err => console.log('Error finding songs:', err));
+  response.send('Songs!');
+  // Song
+  //   .find({})
+  //   .then(songs => {
+  //     response.json(songs);
+  //   })
+  //   .catch(err => console.log('Error finding songs:', err));
 });
 
 app.get('*', (req, res) => {
