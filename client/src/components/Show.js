@@ -5,15 +5,13 @@ const Show = ({ info }) => {
   const setTwo = info.sets.setTwo;
   const encore = info.sets.encore;
 
+  const date = Object.values(info.date).join('/');
+
   return (
 
     <div>
-      {/* {setOne
-        ? <p>Set One: {setOne.map(song => (
-          <span key={song.id}>{song.name}</span>
-        ))}
-        </p>
-        : null} */}
+      <h3>{date} - {info.venue.name}</h3>
+
       {setOne
         ? <p>Set One: {setOne.map(song => song.title).join(', ')}</p>
         : null}
