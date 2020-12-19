@@ -17,7 +17,8 @@ app.get('/api/shows', (request, response) => {
     .then(shows => {
       console.log(shows);
       response.json(shows);
-    });
+    })
+    .catch(err => console.log('Error finding shows:', err));
 });
 
 app.get('/api/songs', (request, response) => {
@@ -25,7 +26,8 @@ app.get('/api/songs', (request, response) => {
     .find({})
     .then(songs => {
       response.json(songs);
-    });
+    })
+    .catch(err => console.log('Error finding songs:', err));
 });
 
 app.get('*', (req, res) => {
