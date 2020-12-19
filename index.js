@@ -2,10 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 
 // mongoose model imports
 const Song = require('./models/Song');
 const Show = require('./models/Show');
+
+app.use(cors());
 
 app.use(express.json());
 
