@@ -11,6 +11,7 @@ const App = () => {
   const [shows, setShows] = useState('');
 
   useEffect(() => {
+    console.log('App has loaded');
     retrieval
       .getSongs()
       .then(songs => {
