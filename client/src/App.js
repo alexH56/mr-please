@@ -31,22 +31,23 @@ const App = () => {
     <div className='App'>
       {songs
         ? <>
-          <h2>Songs played by Mr. Please: </h2>
+          <h1>Songs played by Mr. Please: </h1>
           <ul>
             {songs.map(song => (<li key={song._id}>{song.title}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
       {shows
         ? <>
+          <h1>Shows performed by Mr. Please: </h1>
           {shows.map(show => (
             <Show
               key={show._id}
-              info={shows}
+              info={show}
             />
           ))}
-          </>
+        </>
         : null}
 
     </div>
