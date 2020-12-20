@@ -19,29 +19,30 @@ const App = () => {
         setSongs(songs);
       });
 
-    retrieval
-      .getShows()
-      .then(shows => {
-        console.log(shows);
-        setShows(shows);
-      });
+    // retrieval
+    //   .getShows()
+    //   .then(shows => {
+    //     console.log(shows);
+    //     setShows(shows);
+    //   });
   },
   []);
 
   return (
     <div className='App'>
+      <h1>Songs played by Mr. Please: </h1>
       {songs
         ? <>
-          <h1>Songs played by Mr. Please: </h1>
           <ul>
             {songs.map(song => (<li key={song._id}>{song.title}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
-      {shows
+      <h1>Shows performed by Mr. Please: </h1>
+      {/* {shows
         ? <>
-          <h1>Shows performed by Mr. Please: </h1>
+
           {shows.map(show => (
             <Show
               key={show._id}
@@ -49,7 +50,7 @@ const App = () => {
             />
           ))}
         </>
-        : null}
+        : null} */}
 
     </div>
   );

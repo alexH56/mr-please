@@ -30,7 +30,10 @@ const showSchema = new mongoose.Schema({
     setOne: [],
     setTwo: [],
     encore: []
-  }
+  },
+  showNotes: [],
+  countsForStats: Boolean,
+  audioLink: String
 });
 
 showSchema.set('toJSON', {
