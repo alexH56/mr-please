@@ -6,7 +6,7 @@ const cors = require('cors');
 
 // mongoose model imports
 const Song = require('./models/Song');
-// const Show = require('./models/Show');
+const Show = require('./models/Show');
 
 app.use(cors());
 
@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api/shows', (request, response) => {
-  // Show
-  //   .find({})
-  //   .then(shows => {
-  //     console.log(shows);
-  //     response.json(shows);
-  //   })
-  //   .catch(err => console.log('Error finding shows:', err));
+  Show
+    .find({})
+    .then(shows => {
+      console.log(shows);
+      response.json(shows);
+    })
+    .catch(err => console.log('Error finding shows:', err));
 });
 
 app.get('/api/songs', (request, response) => {

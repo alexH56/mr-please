@@ -19,12 +19,12 @@ const App = () => {
         setSongs(songs);
       });
 
-    // retrieval
-    //   .getShows()
-    //   .then(shows => {
-    //     console.log(shows);
-    //     setShows(shows);
-    //   });
+    retrieval
+      .getShows()
+      .then(shows => {
+        console.log(shows);
+        setShows(shows);
+      });
   },
   []);
 
@@ -40,7 +40,7 @@ const App = () => {
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
-      {/* {shows
+      {shows
         ? <>
 
           {shows.map(show => (
@@ -49,8 +49,8 @@ const App = () => {
               info={show}
             />
           ))}
-        </>
-        : null} */}
+          </>
+        : null}
 
     </div>
   );
