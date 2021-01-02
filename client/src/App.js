@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // component imports
 import Show from './components/Show';
-import SetForm from './components/SetForm';
+import ShowForm from './components/ShowForm';
 
 // service imports
 import retrieval from './services/retrieval';
@@ -35,7 +35,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song._id}>{song.title}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -47,10 +47,10 @@ const App = () => {
               info={show}
             />
           ))}
-        </>
+          </>
         : null}
 
-      <SetForm
+      <ShowForm
         songs={songs}
       />
 

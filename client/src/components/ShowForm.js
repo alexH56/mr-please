@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SetForm = ({ songs }) => {
+const ShowForm = ({ songs }) => {
   const [newShow, setNewShow] = useState([]);
 
   const handleSongSelect = (e) => {
@@ -31,5 +31,5 @@ const SetForm = ({ songs }) => {
   );
 };
 
-export default SetForm
+export default ShowForm
 ;
