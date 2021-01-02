@@ -35,7 +35,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song._id}>{song.title}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -47,13 +47,11 @@ const App = () => {
               info={show}
             />
           ))}
-          </>
+        </>
         : null}
 
       <SetForm
         songs={songs}
-        handleSongSelect={handleSongSelect}
-        newShow={newShow}
       />
 
     </div>
