@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // component imports
 import Show from './components/Show';
+import SetForm from './components/SetForm';
 
 // service imports
 import retrieval from './services/retrieval';
@@ -15,14 +16,12 @@ const App = () => {
     retrieval
       .getSongs()
       .then(songs => {
-        console.log(songs);
         setSongs(songs);
       });
 
     retrieval
       .getShows()
       .then(shows => {
-        console.log(shows);
         setShows(shows);
       });
   },
@@ -42,7 +41,6 @@ const App = () => {
       <h1>Shows performed by Mr. Please: </h1>
       {shows
         ? <>
-
           {shows.map(show => (
             <Show
               key={show._id}
@@ -51,6 +49,12 @@ const App = () => {
           ))}
           </>
         : null}
+
+      <SetForm
+        songs={songs}
+        handleSongSelect={handleSongSelect}
+        newShow={newShow}
+      />
 
     </div>
   );
