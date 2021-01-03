@@ -33,9 +33,9 @@ const App = () => {
       {songs
         ? <>
           <ul>
-            {songs.map(song => (<li key={song._id}>{song.title}</li>))}
+            {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -43,11 +43,11 @@ const App = () => {
         ? <>
           {shows.map(show => (
             <Show
-              key={show._id}
-              info={show}
+              key={show.id}
+              show={show}
             />
           ))}
-          </>
+        </>
         : null}
 
       <ShowForm
