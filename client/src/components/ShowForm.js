@@ -34,19 +34,20 @@ const ShowForm = ({ songs }) => {
   const [encoreClicked, setEncoreClicked] = useState(false);
 
   const renderSetForms = (counter) => {
-    const content = [];
+    const forms = [];
     for (let i = 1; i <= counter; i++) {
-      content.push(
+      forms.push(
         <SetForm
           key={i}
           setID={i}
           songs={songs}
           newShow={newShow}
           handleSongSelect={handleSongSelect}
+          handleTransitionToggle={handleTransitionToggle}
         />
       );
     }
-    return content;
+    return forms;
   };
 
   const handleSongSelect = (e, setID) => {
@@ -58,8 +59,44 @@ const ShowForm = ({ songs }) => {
       }
     }
     const newSet = newShow.sets[setID].concat(newSong);
-    setNewShow({ ...newShow, sets: { ...newShow.sets, [setID]: newSet } },
-      console.log(newShow));
+    setNewShow({ ...newShow, sets: { ...newShow.sets, [setID]: newSet } });
+  };
+
+  const handleTransitionToggle = (song, setID) => {
+    if (song.transition) {
+      const toggledSong = Object.keys(song).reduce((object, key) => {
+        if (key !== 'transition') {
+          object[key] = song[key];
+        }
+        return object;
+      }, {});
+      const oldSet = newShow.sets[setID];
+      const newSet = oldSet
+        .slice(0, oldSet.length - 1)
+        .concat(toggledSong);
+
+      setNewShow({
+        ...newShow,
+        sets: {
+          ...newShow.sets,
+          [setID]: newSet
+        }
+      });
+    } else {
+      const toggledSong = { ...song, transition: true };
+      const oldSet = newShow.sets[setID];
+      const newSet = oldSet
+        .slice(0, oldSet.length - 1)
+        .concat(toggledSong);
+
+      setNewShow({
+        ...newShow,
+        sets: {
+          ...newShow.sets,
+          [setID]: newSet
+        }
+      });
+    }
   };
 
   return (
@@ -75,6 +112,7 @@ const ShowForm = ({ songs }) => {
           songs={songs}
           newShow={newShow}
           handleSongSelect={handleSongSelect}
+          handleTransitionToggle={handleTransitionToggle}
         />
         : null}
 
