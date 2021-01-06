@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // component imports
 import Show from './components/Show';
-import ShowForm from './components/ShowForm';
+import ShowForm from './components/ShowForm/ShowForm';
 
 // service imports
 import retrieval from './services/retrieval';

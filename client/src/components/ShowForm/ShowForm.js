@@ -51,7 +51,6 @@ const ShowForm = ({ songs }) => {
   };
 
   const handleSongSelect = (e, setID) => {
-    console.log(e.target.value);
     let newSong;
     for (const song of songs) {
       if (song.title === e.target.value) {
@@ -113,7 +112,7 @@ const ShowForm = ({ songs }) => {
           newShow={newShow}
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
-        />
+          />
         : null}
 
       {counter < 3
@@ -125,9 +124,9 @@ const ShowForm = ({ songs }) => {
           setNewShow({ ...newShow, sets: { ...newShow.sets, [counter]: [] } });
           setCounter(counter - 1);
         }}
-        >
+          >
         Remove Set
-        </button>
+          </button>
         : null}
 
       <button onClick={() => {
