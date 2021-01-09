@@ -10,6 +10,7 @@ import retrieval from './services/retrieval';
 const App = () => {
   const [songs, setSongs] = useState('');
   const [shows, setShows] = useState('');
+  const [venues, setVenues] = useState('');
 
   useEffect(() => {
     console.log('App has loaded');
@@ -24,18 +25,30 @@ const App = () => {
       .then(shows => {
         setShows(shows);
       });
+
+    retrieval
+      .getVenues()
+      .then(songs => {
+        setVenues(songs);
+      });
   },
   []);
 
   return (
     <div className='App'>
+
+      <ShowForm
+        songs={songs}
+        venues={venues}
+      />
+
       <h1>Songs played by Mr. Please: </h1>
       {songs
         ? <>
           <ul>
             {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -47,12 +60,17 @@ const App = () => {
               show={show}
             />
           ))}
-        </>
+          </>
         : null}
 
-      <ShowForm
-        songs={songs}
-      />
+      <h1>Venues played by Mr. Please: </h1>
+      {venues
+        ? <>
+          <ul>
+            {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
+          </ul>
+          </>
+        : null}
 
     </div>
   );
