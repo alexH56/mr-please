@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
+import DateForm from './DateForm';
 import SetForm from './SetForm';
+import VenueForm from './VenueForm';
 
-const ShowForm = ({ songs }) => {
+const ShowForm = ({ songs, venues }) => {
   const blankSet = {
     date: {
       month: 1,
@@ -16,6 +18,7 @@ const ShowForm = ({ songs }) => {
         street2: '',
         city: '',
         state: '',
+        zip: '',
         country: ''
       }
     },
@@ -30,12 +33,12 @@ const ShowForm = ({ songs }) => {
     audioLink: ''
   };
   const [newShow, setNewShow] = useState(blankSet);
-  const [counter, setCounter] = useState(1);
+  const [numOfSets, setNumOfSets] = useState(1);
   const [encoreClicked, setEncoreClicked] = useState(false);
 
-  const renderSetForms = (counter) => {
+  const renderSetForms = (numOfSets) => {
     const forms = [];
-    for (let i = 1; i <= counter; i++) {
+    for (let i = 1; i <= numOfSets; i++) {
       forms.push(
         <SetForm
           key={i}
@@ -98,11 +101,43 @@ const ShowForm = ({ songs }) => {
     }
   };
 
+  const handleDate = (e) => {
+    const date = e.target.value;
+    const splitDate = date.split('-');
+    const dateObj = {
+      month: splitDate[1],
+      day: splitDate[2],
+      year: splitDate[0]
+    };
+
+    setNewShow({ ...newShow, date: dateObj });
+  };
+
+  const handleVenue = (e) => {
+    let venueObj;
+    for (const venue of venues) {
+      if (venue.name === e.target.value) {
+        venueObj = venue;
+      }
+    }
+
+    setNewShow({ ...newShow, venue: venueObj });
+  };
+
   return (
     <div>
       <h1>New Show:</h1>
 
-      {renderSetForms(counter)}
+      <DateForm
+        handleDate={handleDate}
+      />
+
+      <VenueForm
+        venues={venues}
+        handleVenue={handleVenue}
+      />
+
+      {renderSetForms(numOfSets)}
 
       {encoreClicked
         ? <SetForm
@@ -112,21 +147,21 @@ const ShowForm = ({ songs }) => {
           newShow={newShow}
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
-          />
+        />
         : null}
 
-      {counter < 3
-        ? <button onClick={() => setCounter(counter + 1)}>Add Set</button>
+      {numOfSets < 3
+        ? <button onClick={() => setNumOfSets(numOfSets + 1)}>Add Set</button>
         : null}
 
-      {counter > 1
+      {numOfSets > 1
         ? <button onClick={() => {
-          setNewShow({ ...newShow, sets: { ...newShow.sets, [counter]: [] } });
-          setCounter(counter - 1);
+          setNewShow({ ...newShow, sets: { ...newShow.sets, [numOfSets]: [] } });
+          setNumOfSets(numOfSets - 1);
         }}
-          >
+        >
         Remove Set
-          </button>
+        </button>
         : null}
 
       <button onClick={() => {
