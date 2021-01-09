@@ -16,7 +16,6 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
   return (
     <div>
       <p>{setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
-        {/* create dynamic joiner function */}
         {parsedSet}
       </p>
 
@@ -26,7 +25,7 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
 
       <form>
         <select name='song' value='' onChange={(event) => handleSongSelect(event, setID)}>
-          <option value=''>-add a song here-</option>
+          <option value=''>- add a song -</option>
           {songs ? songs.map(song => <option key={song.title} value={song.title}>{song.title}</option>) : null}
         </select>
       </form>
