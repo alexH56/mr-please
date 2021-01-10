@@ -29,7 +29,7 @@ const ShowForm = ({ songs, venues }) => {
       encore: []
     },
     showNotes: '',
-    countsForStats: true,
+    countsForStats: false,
     audioLink: ''
   };
   const [newShow, setNewShow] = useState(blankSet);
@@ -183,7 +183,7 @@ const ShowForm = ({ songs, venues }) => {
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
           handleSongNote={handleSongNote}
-          />
+        />
         : null}
 
       {numOfSets < 3
@@ -195,9 +195,9 @@ const ShowForm = ({ songs, venues }) => {
           setNewShow({ ...newShow, sets: { ...newShow.sets, [numOfSets]: [] } });
           setNumOfSets(numOfSets - 1);
         }}
-          >
+        >
         Remove Set
-          </button>
+        </button>
         : null}
 
       <button onClick={() => {
