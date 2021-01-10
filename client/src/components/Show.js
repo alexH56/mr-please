@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Show = ({ show }) => {
-  const date = Object.values(show.date).join('/');
+  // const date = Object.values(show.date).join('/');
+  const { month, day, year } = show.date;
+  const date = `${month}/${day}/${year}`;
   const venueName = show.venue.name;
 
   const setOne = show.sets[1];
@@ -16,7 +18,15 @@ const Show = ({ show }) => {
       <h3>{date} - {venueName}</h3>
 
       {setOne.length > 0
-        ? <p>Set One: {setOne.map(song => song.title).join(', ')}</p>
+        ? <p>Set One: {setOne.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title} href='#'>
+              {song.title}
+            </a>
+            {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))}
+          </p>
         : null}
 
       {setTwo.length > 0
