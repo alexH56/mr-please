@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // utility imports
 import joinDynamically from '../../services/joinDynamically';
 
-const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionToggle }) => {
+const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionToggle, handleSongNote }) => {
+  const [noteText, setNoteText] = useState('');
   const set = newShow.sets[setID];
   const parsedSet = set.length > 0 ? joinDynamically(set) : null;
   const mostRecentSong = set[set.length - 1];
-  const buttonContent = set.length > 0
+  const toggleContent = set.length > 0
     ? mostRecentSong.transition
       ? ','
       : '>'
     : null;
+
+  const handleText = (e) => {
+    setNoteText(e.target.value);
+  };
 
   return (
     <div>
@@ -20,7 +25,20 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
       </p>
 
       {set.length > 0
-        ? <button onClick={() => handleTransitionToggle(mostRecentSong, setID)}>{buttonContent}</button>
+        ? <>
+          <button onClick={() => handleTransitionToggle(mostRecentSong, setID)}>{toggleContent}</button>
+          <form>
+            <input
+              type='text'
+              value={noteText}
+              onChange={(e) => handleText(e)}
+              placeholder='Add a note to current song'
+            />
+          </form>
+          <button onClick={() => { handleSongNote(mostRecentSong, setID, noteText); setNoteText(''); }}>
+              add song note
+          </button>
+        </>
         : null}
 
       <form>

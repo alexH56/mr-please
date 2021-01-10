@@ -35,6 +35,7 @@ const ShowForm = ({ songs, venues }) => {
   const [newShow, setNewShow] = useState(blankSet);
   const [numOfSets, setNumOfSets] = useState(1);
   const [encoreClicked, setEncoreClicked] = useState(false);
+  const [noteCounter, setNoteCounter] = useState(1);
 
   const renderSetForms = (numOfSets) => {
     const forms = [];
@@ -47,6 +48,7 @@ const ShowForm = ({ songs, venues }) => {
           newShow={newShow}
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
+          handleSongNote={handleSongNote}
         />
       );
     }
@@ -124,6 +126,39 @@ const ShowForm = ({ songs, venues }) => {
     setNewShow({ ...newShow, venue: venueObj });
   };
 
+  const handleSongNote = (song, setID, text) => {
+    const notedSong = !song.note
+      ? {
+        ...song,
+        note: {
+          id: noteCounter,
+          text: text
+        }
+      }
+      : {
+        ...song,
+        note: {
+          ...song.note,
+          text: text
+        }
+      };
+
+    const oldSet = newShow.sets[setID];
+    const newSet = oldSet
+      .slice(0, oldSet.length - 1)
+      .concat(notedSong);
+
+    setNewShow({
+      ...newShow,
+      sets: {
+        ...newShow.sets,
+        [setID]: newSet
+      }
+    });
+
+    if (!song.note) { setNoteCounter(noteCounter + 1); }
+  };
+
   return (
     <div>
       <h1>New Show:</h1>
@@ -147,11 +182,12 @@ const ShowForm = ({ songs, venues }) => {
           newShow={newShow}
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
-        />
+          handleSongNote={handleSongNote}
+          />
         : null}
 
       {numOfSets < 3
-        ? <button onClick={() => setNumOfSets(numOfSets + 1)}>Add Set</button>
+        ? <button onClick={() => setNumOfSets(() => numOfSets + 1)}>Add Set</button>
         : null}
 
       {numOfSets > 1
@@ -159,9 +195,9 @@ const ShowForm = ({ songs, venues }) => {
           setNewShow({ ...newShow, sets: { ...newShow.sets, [numOfSets]: [] } });
           setNumOfSets(numOfSets - 1);
         }}
-        >
+          >
         Remove Set
-        </button>
+          </button>
         : null}
 
       <button onClick={() => {
