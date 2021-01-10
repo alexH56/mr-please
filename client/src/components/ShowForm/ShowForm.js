@@ -55,6 +55,17 @@ const ShowForm = ({ songs, venues }) => {
     return forms;
   };
 
+  const songNotes = (() => {
+    let noteArray = [];
+    for (const set in newShow.sets) {
+      const noteContent = newShow.sets[set]
+        .filter(show => show.note)
+        .map(show => show.note);
+      noteArray = noteArray.concat(noteContent);
+    }
+    return noteArray;
+  })();
+
   const handleSongSelect = (e, setID) => {
     let newSong;
     for (const song of songs) {
@@ -185,6 +196,14 @@ const ShowForm = ({ songs, venues }) => {
           handleSongNote={handleSongNote}
         />
         : null}
+
+      <ul>
+        {songNotes.map(note => (
+          <li key={note.id}>
+            {`[${note.id}] ${note.text}`}
+          </li>
+        ))}
+      </ul>
 
       {numOfSets < 3
         ? <button onClick={() => setNumOfSets(() => numOfSets + 1)}>Add Set</button>
