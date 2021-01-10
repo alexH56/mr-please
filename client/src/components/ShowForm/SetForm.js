@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 
-// utility imports
-import joinDynamically from '../../services/joinDynamically';
-
 const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionToggle, handleSongNote }) => {
   const [noteText, setNoteText] = useState('');
   const set = newShow.sets[setID];
-  const parsedSet = set.length > 0 ? joinDynamically(set) : null;
   const mostRecentSong = set[set.length - 1];
   const toggleContent = set.length > 0
     ? mostRecentSong.transition
@@ -21,7 +17,14 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
   return (
     <div>
       <p>{setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
-        {parsedSet}
+        {set.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title} href='#'>
+              {song.title}
+            </a>
+            {index === set.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))}
       </p>
 
       {set.length > 0
