@@ -19,9 +19,12 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
       <p>{setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
         {set.map((song, index) => (
           <span key={song.title}>
-            <a key={song.title} href='#'>
+            <a key={song.title}
+            // href='#'
+            >
               {song.title}
             </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === set.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}

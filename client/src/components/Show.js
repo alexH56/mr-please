@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Show = ({ show }) => {
-  // const date = Object.values(show.date).join('/');
   const { month, day, year } = show.date;
   const date = `${month}/${day}/${year}`;
   const venueName = show.venue.name;
@@ -23,10 +22,11 @@ const Show = ({ show }) => {
             <a key={song.title} href='#'>
               {song.title}
             </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {setTwo.length > 0
