@@ -170,6 +170,16 @@ const ShowForm = ({ songs, venues }) => {
     if (!song.note) { setNoteCounter(noteCounter + 1); }
   };
 
+  const handleCheckbox = () => {
+    const newValue = !newShow.countsForStats;
+
+    setNewShow({
+      ...newShow,
+      countsForStats: newValue
+    }
+    );
+  };
+
   return (
     <div>
       <h1>New Show:</h1>
@@ -194,7 +204,7 @@ const ShowForm = ({ songs, venues }) => {
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
           handleSongNote={handleSongNote}
-        />
+          />
         : null}
 
       <ul>
@@ -214,9 +224,9 @@ const ShowForm = ({ songs, venues }) => {
           setNewShow({ ...newShow, sets: { ...newShow.sets, [numOfSets]: [] } });
           setNumOfSets(numOfSets - 1);
         }}
-        >
+          >
         Remove Set
-        </button>
+          </button>
         : null}
 
       <button onClick={() => {
@@ -226,6 +236,13 @@ const ShowForm = ({ songs, venues }) => {
       >
         {encoreClicked ? 'Remove Encore' : 'Add Encore'}
       </button>
+
+      <label>
+        Counts for stats? <input
+          type='checkbox'
+          checked={newShow.countsForStats} onChange={handleCheckbox}
+        />
+      </label>
 
     </div>
   );
