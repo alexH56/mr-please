@@ -34,11 +34,11 @@ const SetForm = ({ setID, songs, newShow, handleSongSelect, handleTransitionTogg
               onChange={(e) => handleText(e)}
               placeholder='Add a note to current song'
             />
+            <button onClick={(e) => { e.preventDefault(); handleSongNote(mostRecentSong, setID, noteText); setNoteText(''); }}>
+              add
+            </button>
           </form>
-          <button onClick={() => { handleSongNote(mostRecentSong, setID, noteText); setNoteText(''); }}>
-              add song note
-          </button>
-        </>
+          </>
         : null}
 
       <form>
