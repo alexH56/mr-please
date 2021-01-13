@@ -118,9 +118,9 @@ const ShowForm = ({ songs, venues }) => {
     const date = e.target.value;
     const splitDate = date.split('-');
     const dateObj = {
-      month: splitDate[1],
-      day: splitDate[2],
-      year: splitDate[0]
+      month: parseInt(splitDate[1]),
+      day: parseInt(splitDate[2]),
+      year: parseInt(splitDate[0])
     };
 
     setNewShow({ ...newShow, date: dateObj });
@@ -204,7 +204,7 @@ const ShowForm = ({ songs, venues }) => {
           handleSongSelect={handleSongSelect}
           handleTransitionToggle={handleTransitionToggle}
           handleSongNote={handleSongNote}
-          />
+        />
         : null}
 
       <ul>
@@ -224,9 +224,9 @@ const ShowForm = ({ songs, venues }) => {
           setNewShow({ ...newShow, sets: { ...newShow.sets, [numOfSets]: [] } });
           setNumOfSets(numOfSets - 1);
         }}
-          >
+        >
         Remove Set
-          </button>
+        </button>
         : null}
 
       <button onClick={() => {
@@ -241,7 +241,7 @@ const ShowForm = ({ songs, venues }) => {
         Counts for stats? <input
           type='checkbox'
           checked={newShow.countsForStats} onChange={handleCheckbox}
-        />
+                          />
       </label>
 
     </div>
