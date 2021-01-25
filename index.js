@@ -43,6 +43,17 @@ app.get('/api/venues', (request, response) => {
     .catch(err => console.log('Error finding venues:', err));
 });
 
+app.post('/api/shows', (request, response) => {
+  const show = new Show({ ...request.body });
+
+  show.save()
+    .then(result => {
+      console.log('show saved!');
+      console.log(result);
+      response.json(show);
+    });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
