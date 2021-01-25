@@ -4,7 +4,7 @@ import DateForm from './DateForm';
 import SetForm from './SetForm';
 import VenueForm from './VenueForm';
 
-const ShowForm = ({ songs, venues }) => {
+const ShowForm = ({ songs, venues, handleNewShow }) => {
   const blankSet = {
     date: {
       month: 1,
@@ -180,6 +180,15 @@ const ShowForm = ({ songs, venues }) => {
     );
   };
 
+  const handleShowNotes = (e) => {
+    setNewShow({ ...newShow, showNotes: e.target.value });
+  };
+
+  const handleSubmit = (show) => {
+    handleNewShow(show);
+    setNewShow(blankSet);
+  };
+
   return (
     <div>
       <h1>New Show:</h1>
@@ -237,12 +246,32 @@ const ShowForm = ({ songs, venues }) => {
         {encoreClicked ? 'Remove Encore' : 'Add Encore'}
       </button>
 
+      <br />
+
       <label>
         Counts for stats? <input
           type='checkbox'
           checked={newShow.countsForStats} onChange={handleCheckbox}
                           />
       </label>
+
+      <br />
+
+      <label>
+        Show notes: <input
+          type='text'
+          value={newShow.showNotes}
+          onChange={(e) => handleShowNotes(e)}
+                    />
+      </label>
+
+      <br />
+
+      <button
+        disabled={!(newShow.sets[1].length > 0 && newShow.date.year !== 2001 && newShow.venue.name)}
+        onClick={() => handleSubmit(newShow)}
+      >Submit
+      </button>
 
     </div>
   );
