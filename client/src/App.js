@@ -6,6 +6,7 @@ import ShowForm from './components/ShowForm/ShowForm';
 
 // service imports
 import retrieval from './services/retrieval';
+import posting from './services/posting';
 
 const App = () => {
   const [songs, setSongs] = useState('');
@@ -34,12 +35,22 @@ const App = () => {
   },
   []);
 
+  const handleNewShow = (show) => {
+    posting
+      .addShow(show)
+      .then(returnedShow => {
+        console.log(returnedShow);
+        setShows(shows.concat(returnedShow));
+      });
+  };
+
   return (
     <div className='App'>
 
       <ShowForm
         songs={songs}
         venues={venues}
+        handleNewShow={handleNewShow}
       />
 
       <h1>Songs played by Mr. Please: </h1>
@@ -48,7 +59,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -60,7 +71,7 @@ const App = () => {
               show={show}
             />
           ))}
-          </>
+        </>
         : null}
 
       <h1>Venues played by Mr. Please: </h1>
@@ -69,7 +80,7 @@ const App = () => {
           <ul>
             {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
     </div>
