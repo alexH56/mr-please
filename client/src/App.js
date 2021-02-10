@@ -13,25 +13,36 @@ const App = () => {
   const [shows, setShows] = useState('');
   const [venues, setVenues] = useState('');
 
-  useEffect(() => {
+  useEffect(async () => {
     console.log('App has loaded');
-    retrieval
-      .getSongs()
-      .then(songs => {
-        setSongs(songs);
-      });
 
-    retrieval
-      .getShows()
-      .then(shows => {
-        setShows(shows);
-      });
+    const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
+      retrieval.getSongs(),
+      retrieval.getShows(),
+      retrieval.getVenues()
+    ]);
 
-    retrieval
-      .getVenues()
-      .then(songs => {
-        setVenues(songs);
-      });
+    setSongs(returnedSongs);
+    setShows(returnedShows);
+    setVenues(returnedVenues);
+
+    // retrieval
+    //   .getSongs()
+    //   .then(songs => {
+    //     setSongs(songs);
+    //   });
+
+    // retrieval
+    //   .getShows()
+    //   .then(shows => {
+    //     setShows(shows);
+    //   });
+
+    // retrieval
+    //   .getVenues()
+    //   .then(venues => {
+    //     setVenues(venues);
+    //   });
   },
   []);
 
