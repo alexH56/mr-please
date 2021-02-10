@@ -16,6 +16,19 @@ const Show = ({ show }) => {
     <div>
       <h3>{date} - {venueName}</h3>
 
+      {/* {setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
+        {set.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title}
+            // href='#'
+            >
+              {song.title}
+            </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
+            {index === set.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))} */}
+
       {setOne.length > 0
         ? <p>Set One: {setOne.map((song, index) => (
           <span key={song.title}>
@@ -26,19 +39,58 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-        </p>
+          </p>
         : null}
+
+      {/* {setTwo.length > 0
+        ? <p>Set Two: {setTwo.map(song => song.title).join(', ')}</p>
+        : null} */}
 
       {setTwo.length > 0
-        ? <p>Set Two: {setTwo.map(song => song.title).join(', ')}</p>
+        ? <p>Set Two: {setTwo.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title} href='#'>
+              {song.title}
+            </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
+            {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))}
+          </p>
         : null}
+
+      {/* {setThree.length > 0
+        ? <p>Set Three: {setThree.map(song => song.title).join(', ')}</p>
+        : null} */}
 
       {setThree.length > 0
-        ? <p>Set Three: {setThree.map(song => song.title).join(', ')}</p>
+        ? <p>Set Three: {setOne.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title} href='#'>
+              {song.title}
+            </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
+            {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))}
+          </p>
         : null}
 
-      {encore.length > 0
+      {/* {encore.length > 0
         ? <p>Encore: {encore.map(song => song.title).join(', ')}</p>
+        : null} */}
+
+      {encore.length > 0
+        ? <p>Encore: {encore.map((song, index) => (
+          <span key={song.title}>
+            <a key={song.title} href='#'>
+              {song.title}
+            </a>
+            {song.note ? <sup>[{song.note.id}]</sup> : null}
+            {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
+          </span>
+        ))}
+          </p>
         : null}
 
       {showNotes
