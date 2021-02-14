@@ -38,11 +38,19 @@ const App = () => {
   return (
     <div className='App'>
 
+      {/*
+
+      "ShowForm" component not user-facing.
+
+      TO-DO: Use for admin users once accounts and auth are implemented.
+
       <ShowForm
         songs={songs}
         venues={venues}
         handleNewShow={handleNewShow}
       />
+
+      */}
 
       <h1>Songs played by Mr. Please: </h1>
       {songs
@@ -50,7 +58,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -62,7 +70,7 @@ const App = () => {
               show={show}
             />
           ))}
-          </>
+        </>
         : null}
 
       <h1>Venues played by Mr. Please: </h1>
@@ -71,7 +79,7 @@ const App = () => {
           <ul>
             {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
           </ul>
-          </>
+        </>
         : null}
 
     </div>
