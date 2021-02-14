@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 // component imports
 import Show from './components/Show';
-import ShowForm from './components/ShowForm/ShowForm';
+// import ShowForm from './components/ShowForm/ShowForm';
 
 // service imports
 import retrieval from './services/retrieval';
-import posting from './services/posting';
+// import posting from './services/posting';
 
 const App = () => {
   const [songs, setSongs] = useState('');
@@ -14,6 +14,7 @@ const App = () => {
   const [venues, setVenues] = useState('');
 
   useEffect(async () => {
+    // retrieves all band-related data upon page load
     const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
       retrieval.getSongs(),
       retrieval.getShows(),
@@ -26,14 +27,16 @@ const App = () => {
   },
   []);
 
-  const handleNewShow = (show) => {
-    posting
-      .addShow(show)
-      .then(returnedShow => {
-        console.log(returnedShow);
-        setShows(shows.concat(returnedShow));
-      });
-  };
+  // "handleNewShow" function only necessary for ShowForm. Currently not user-facing
+  //
+  // const handleNewShow = (show) => {
+  //   posting
+  //     .addShow(show)
+  //     .then(returnedShow => {
+  //       console.log(returnedShow);
+  //       setShows(shows.concat(returnedShow));
+  //     });
+  // };
 
   return (
     <div className='App'>
@@ -58,7 +61,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -70,7 +73,7 @@ const App = () => {
               show={show}
             />
           ))}
-        </>
+          </>
         : null}
 
       <h1>Venues played by Mr. Please: </h1>
@@ -79,7 +82,7 @@ const App = () => {
           <ul>
             {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
     </div>
