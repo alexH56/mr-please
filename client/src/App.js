@@ -14,8 +14,6 @@ const App = () => {
   const [venues, setVenues] = useState('');
 
   useEffect(async () => {
-    console.log('App has loaded');
-
     const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
       retrieval.getSongs(),
       retrieval.getShows(),
@@ -25,24 +23,6 @@ const App = () => {
     setSongs(returnedSongs);
     setShows(returnedShows);
     setVenues(returnedVenues);
-
-    // retrieval
-    //   .getSongs()
-    //   .then(songs => {
-    //     setSongs(songs);
-    //   });
-
-    // retrieval
-    //   .getShows()
-    //   .then(shows => {
-    //     setShows(shows);
-    //   });
-
-    // retrieval
-    //   .getVenues()
-    //   .then(venues => {
-    //     setVenues(venues);
-    //   });
   },
   []);
 
@@ -70,7 +50,7 @@ const App = () => {
           <ul>
             {songs.map(song => (<li key={song.id}>{song.title}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
       <h1>Shows performed by Mr. Please: </h1>
@@ -82,7 +62,7 @@ const App = () => {
               show={show}
             />
           ))}
-        </>
+          </>
         : null}
 
       <h1>Venues played by Mr. Please: </h1>
@@ -91,7 +71,7 @@ const App = () => {
           <ul>
             {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
           </ul>
-        </>
+          </>
         : null}
 
     </div>
