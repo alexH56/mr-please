@@ -21,17 +21,21 @@ const showSchema = new mongoose.Schema({
   venue: {
     name: String,
     location: {
+      street: String,
+      street2: String,
       city: String,
       state: String,
+      zip: String,
       country: String
     }
   },
   sets: {
-    setOne: [],
-    setTwo: [],
+    1: [],
+    2: [],
+    3: [],
     encore: []
   },
-  showNotes: [],
+  showNotes: String,
   countsForStats: Boolean,
   audioLink: String
 });
@@ -40,6 +44,7 @@ showSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject.__v;
+    delete returnedObject._id;
   }
 });
 

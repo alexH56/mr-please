@@ -7,6 +7,7 @@ const cors = require('cors');
 // mongoose model imports
 const Song = require('./models/Song');
 const Show = require('./models/Show');
+const Venue = require('./models/Venue');
 
 app.use(cors());
 
@@ -31,6 +32,26 @@ app.get('/api/songs', (request, response) => {
       response.json(songs);
     })
     .catch(err => console.log('Error finding songs:', err));
+});
+
+app.get('/api/venues', (request, response) => {
+  Venue
+    .find({})
+    .then(venues => {
+      response.json(venues);
+    })
+    .catch(err => console.log('Error finding venues:', err));
+});
+
+app.post('/api/shows', (request, response) => {
+  const show = new Show({ ...request.body });
+
+  show.save()
+    .then(result => {
+      console.log('show saved!');
+      console.log(result);
+      response.json(show);
+    });
 });
 
 app.get('*', (req, res) => {

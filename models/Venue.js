@@ -6,19 +6,25 @@ console.log('connecting to', url);
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
   .then(result => {
-    console.log('connected to Song db');
+    console.log('connected to Venue db');
   })
   .catch((error) => {
-    console.log('error connecting to Song db:', error.message);
+    console.log('error connecting to Venue db:', error.message);
   });
 
-const songSchema = new mongoose.Schema({
-  title: String,
-  URLname: String,
-  artist: String
+const venueSchema = new mongoose.Schema({
+  name: String,
+  location: {
+    street: String,
+    street2: String,
+    city: String,
+    state: String,
+    zip: String,
+    country: String
+  }
 });
 
-songSchema.set('toJSON', {
+venueSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject.__v;
@@ -26,4 +32,4 @@ songSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('Song', songSchema);
+module.exports = mongoose.model('venue', venueSchema);

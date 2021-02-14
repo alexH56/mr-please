@@ -21,5 +21,15 @@ const getSongs = () => (
     .catch(err => console.log(err))
 );
 
-const retrieval = { getShows, getSongs };
+const getVenues = () => (
+  axios({
+    method: 'get',
+    url: '/venues',
+    baseURL: baseURL
+  })
+    .then(response => response.data)
+    .catch(err => console.log(err))
+);
+
+const retrieval = { getShows, getSongs, getVenues };
 export default retrieval;
