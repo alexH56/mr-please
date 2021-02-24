@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const VenueList = ({ venues }) => {
   return (
     <>
@@ -7,9 +9,14 @@ const VenueList = ({ venues }) => {
       {venues
         ? <>
           <ul>
-            {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
+            {venues.map(venue => (
+              <li key={venue.id}>
+                <Link to={`/setlists/venues/${venue.URLname}`}>
+                  {venue.name}
+                </Link>
+              </li>))}
           </ul>
-          </>
+        </>
         : null}
     </>
   );

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const SongList = ({ songs }) => {
   return (
     <>
@@ -7,9 +9,14 @@ const SongList = ({ songs }) => {
       {songs
         ? <>
           <ul>
-            {songs.map(song => (<li key={song.id}>{song.title}</li>))}
+            {songs.map(song => (
+              <li key={song.id}>
+                <Link to={`/setlists/songs/${song.URLname}`}>
+                  {song.title}
+                </Link>
+              </li>))}
           </ul>
-          </>
+        </>
         : null}
     </>
   );
