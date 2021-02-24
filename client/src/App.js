@@ -1,89 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import {
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useRouteMatch,
+  useHistory
+} from 'react-router-dom';
 
 // component imports
-import Show from './components/Show';
-// import ShowForm from './components/ShowForm/ShowForm';
-
-// service imports
-import retrieval from './services/retrieval';
-// import posting from './services/posting';
+import Home from './components/Home';
+import Setlists from './components/Setlists/Setlists';
 
 const App = () => {
-  const [songs, setSongs] = useState('');
-  const [shows, setShows] = useState('');
-  const [venues, setVenues] = useState('');
-
-  useEffect(async () => {
-    // retrieves all band-related data upon page load
-    const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
-      retrieval.getSongs(),
-      retrieval.getShows(),
-      retrieval.getVenues()
-    ]);
-
-    setSongs(returnedSongs);
-    setShows(returnedShows);
-    setVenues(returnedVenues);
-  },
-  []);
-
-  // "handleNewShow" function only necessary for ShowForm. Currently not user-facing
-  //
-  // const handleNewShow = (show) => {
-  //   posting
-  //     .addShow(show)
-  //     .then(returnedShow => {
-  //       console.log(returnedShow);
-  //       setShows(shows.concat(returnedShow));
-  //     });
-  // };
-
   return (
     <div className='App'>
 
-      {/*
+      <Switch>
+        <Route path='/setlists'>
+          <Setlists />
+        </Route>
 
-      "ShowForm" component not user-facing.
-
-      TO-DO: Use for admin users once accounts and auth are implemented.
-
-      <ShowForm
-        songs={songs}
-        venues={venues}
-        handleNewShow={handleNewShow}
-      />
-
-      */}
-
-      <h1>Songs played by Mr. Please: </h1>
-      {songs
-        ? <>
-          <ul>
-            {songs.map(song => (<li key={song.id}>{song.title}</li>))}
-          </ul>
-          </>
-        : null}
-
-      <h1>Shows performed by Mr. Please: </h1>
-      {shows
-        ? <>
-          {shows.map(show => (
-            <Show
-              key={show.id}
-              show={show}
-            />
-          ))}
-          </>
-        : null}
-
-      <h1>Venues played by Mr. Please: </h1>
-      {venues
-        ? <>
-          <ul>
-            {venues.map(venue => (<li key={venue.id}>{venue.name}</li>))}
-          </ul>
-          </>
-        : null}
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
 
     </div>
   );
