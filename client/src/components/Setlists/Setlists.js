@@ -4,7 +4,9 @@ import { Link, Route, Switch } from 'react-router-dom';
 // component imports
 import Show from './Show';
 import SongList from './SongList';
+import SongPage from './SongPage';
 import VenueList from './VenueList';
+import VenuePage from './VenuePage';
 
 // import ShowForm from './components/ShowForm/ShowForm';
 
@@ -17,17 +19,21 @@ const Setlists = () => {
   const [shows, setShows] = useState('');
   const [venues, setVenues] = useState('');
 
-  useEffect(async () => {
+  useEffect(() => {
     // retrieves all band-related data upon page load
-    const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
-      retrieval.getSongs(),
-      retrieval.getShows(),
-      retrieval.getVenues()
-    ]);
+    const fetchBandData = async () => {
+      const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
+        retrieval.getSongs(),
+        retrieval.getShows(),
+        retrieval.getVenues()
+      ]);
 
-    setSongs(returnedSongs);
-    setShows(returnedShows);
-    setVenues(returnedVenues);
+      setSongs(returnedSongs);
+      setShows(returnedShows);
+      setVenues(returnedVenues);
+    };
+
+    fetchBandData();
   },
   []);
 
@@ -53,15 +59,31 @@ const Setlists = () => {
       </nav>
 
       <Switch>
+        <Route path='/setlists/songs/:id'>
+          <SongPage
+            songs={songs}
+            shows={shows}
+          />
+        </Route>
+
         <Route path='/setlists/songs'>
           <SongList
             songs={songs}
+            shows={shows}
+          />
+        </Route>
+
+        <Route path='/setlists/venues/:id'>
+          <VenuePage
+            venues={venues}
+            shows={shows}
           />
         </Route>
 
         <Route path='/setlists/venues'>
           <VenueList
             venues={venues}
+            shows={shows}
           />
         </Route>
 
