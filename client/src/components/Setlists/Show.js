@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Show = ({ show }) => {
   const { month, day, year } = show.date;
@@ -32,9 +33,9 @@ const Show = ({ show }) => {
       {setOne.length > 0
         ? <p>Set One: {setOne.map((song, index) => (
           <span key={song.title}>
-            <a key={song.title} href='#'>
+            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
               {song.title}
-            </a>
+            </Link>
             {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
@@ -42,16 +43,12 @@ const Show = ({ show }) => {
           </p>
         : null}
 
-      {/* {setTwo.length > 0
-        ? <p>Set Two: {setTwo.map(song => song.title).join(', ')}</p>
-        : null} */}
-
       {setTwo.length > 0
         ? <p>Set Two: {setTwo.map((song, index) => (
           <span key={song.title}>
-            <a key={song.title} href='#'>
+            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
               {song.title}
-            </a>
+            </Link>
             {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
@@ -59,16 +56,12 @@ const Show = ({ show }) => {
           </p>
         : null}
 
-      {/* {setThree.length > 0
-        ? <p>Set Three: {setThree.map(song => song.title).join(', ')}</p>
-        : null} */}
-
       {setThree.length > 0
         ? <p>Set Three: {setOne.map((song, index) => (
           <span key={song.title}>
-            <a key={song.title} href='#'>
+            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
               {song.title}
-            </a>
+            </Link>
             {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
@@ -76,16 +69,12 @@ const Show = ({ show }) => {
           </p>
         : null}
 
-      {/* {encore.length > 0
-        ? <p>Encore: {encore.map(song => song.title).join(', ')}</p>
-        : null} */}
-
       {encore.length > 0
         ? <p>Encore: {encore.map((song, index) => (
           <span key={song.title}>
-            <a key={song.title} href='#'>
+            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
               {song.title}
-            </a>
+            </Link>
             {song.note ? <sup>[{song.note.id}]</sup> : null}
             {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
