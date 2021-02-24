@@ -14,6 +14,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFind
 
 const venueSchema = new mongoose.Schema({
   name: String,
+  URLname: String,
   location: {
     street: String,
     street2: String,
