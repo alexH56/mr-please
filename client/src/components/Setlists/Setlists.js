@@ -59,7 +59,7 @@ const Setlists = () => {
       </nav>
 
       <Switch>
-        <Route path='/setlists/songs/:id'>
+        <Route path='/setlists/songs/:songName'>
           <SongPage
             songs={songs}
             shows={shows}
@@ -73,7 +73,7 @@ const Setlists = () => {
           />
         </Route>
 
-        <Route path='/setlists/venues/:id'>
+        <Route path='/setlists/venues/:venueName'>
           <VenuePage
             venues={venues}
             shows={shows}
