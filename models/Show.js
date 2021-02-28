@@ -20,6 +20,7 @@ const showSchema = new mongoose.Schema({
   },
   venue: {
     name: String,
+    URLname: String,
     location: {
       street: String,
       street2: String,
