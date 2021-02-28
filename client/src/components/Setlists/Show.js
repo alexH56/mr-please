@@ -13,6 +13,17 @@ const Show = ({ show }) => {
 
   const showNotes = show.showNotes;
 
+  const songNotes = (() => {
+    let noteArray = [];
+    for (const set in show.sets) {
+      const noteContent = show.sets[set]
+        .filter(show => show.note)
+        .map(show => show.note);
+      noteArray = noteArray.concat(noteContent);
+    }
+    return noteArray;
+  })();
+
   return (
     <div>
       <h3>{date} - {venueName}</h3>
@@ -40,7 +51,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {setTwo.length > 0
@@ -53,7 +64,7 @@ const Show = ({ show }) => {
             {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {setThree.length > 0
@@ -66,7 +77,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {encore.length > 0
@@ -79,8 +90,16 @@ const Show = ({ show }) => {
             {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
+
+      <ul>
+        {songNotes.map(note => (
+          <li key={note.id}>
+            {`[${note.id}] ${note.text}`}
+          </li>
+        ))}
+      </ul>
 
       {showNotes
         ? <p>Notes: {showNotes}</p>
