@@ -54,8 +54,8 @@ const Setlists = () => {
         <Link to='/setlists'>Setlists</Link>
         <br />
         <Link to='/setlists/songs'>Songs</Link>
-        {/* <br />
-        <Link to='/setlists/venues'>Venues</Link> */}
+        <br />
+        <Link to='/setlists/venues'>Venues</Link>
       </nav>
 
       <Switch>
@@ -97,7 +97,7 @@ const Setlists = () => {
                   show={show}
                 />
               ))}
-              </>
+            </>
             : null}
         </Route>
       </Switch>
