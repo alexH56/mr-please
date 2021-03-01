@@ -11,21 +11,18 @@ const VenuePage = ({ venues, shows }) => {
     : null;
 
   const showsWithVenue = shows && venue
-    ? console.log(shows)
-    // shows.filter(show => show.venue.URLname === venueName)
+    ? shows.filter(show => show.venue.name === venue.name)
     : null;
-
-  console.log(showsWithVenue);
 
   return (
     <>
       {venue
         ? <>
           <h1>{venue.name}</h1> <p>Has hosted the following shows:</p>
-        </>
+          </>
 
         : null}
-      {/*
+
       {showsWithVenue
         ? <>
           {showsWithVenue.map(show => (
@@ -35,7 +32,7 @@ const VenuePage = ({ venues, shows }) => {
             />
           ))}
           </>
-        : null} */}
+        : null}
     </>
   );
 };
