@@ -22,14 +22,27 @@ const Setlists = () => {
   useEffect(() => {
     // retrieves all band-related data upon page load
     const fetchBandData = async () => {
-      const [returnedSongs, returnedShows, returnedVenues] = await Promise.all([
-        retrieval.getSongs(),
+      const [returnedShows, returnedSongs, returnedVenues] = await Promise.all([
         retrieval.getShows(),
+        retrieval.getSongs(),
         retrieval.getVenues()
       ]);
 
+      const sortedShows = [...returnedShows].sort((a, b) => {
+        const A = a.date;
+        const B = b.date;
+
+        if (A.year !== B.year) {
+          return A.year + B.year;
+        } else if (A.month !== B.month) {
+          return A.month + B.month;
+        } else {
+          return A.day + B.day;
+        }
+      });
+
+      setShows(sortedShows);
       setSongs(returnedSongs);
-      setShows(returnedShows);
       setVenues(returnedVenues);
     };
 
