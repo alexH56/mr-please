@@ -6,12 +6,26 @@ const Show = ({ show }) => {
   const Card = styled.div`
     background: papayawhip;
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
-    /* border-style: solid;
-    border-color: black;
-    border-width: 5px; */
     border-radius: 20px;
-    width: 85%;
+    padding: 10px;
+    width: 90%;
     margin-bottom: 40px;
+
+    a {
+      color: palevioletred;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    span {
+      color: palevioletred;
+    }
+  `;
+
+  const Heading = styled.h3`
+    margin-top: 0;
   `;
 
   // end styles
@@ -40,7 +54,7 @@ const Show = ({ show }) => {
 
   return (
     <Card>
-      <h3>{date} - {venueName}</h3>
+      <Heading>{date} - {venueName}</Heading>
 
       {/* {setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
         {set.map((song, index) => (
