@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import Show from './Show';
+import ShowsContainer from './ShowsContainer';
 
 const SongPage = ({ songs, shows }) => {
   const { songName } = useParams();
@@ -29,20 +29,14 @@ const SongPage = ({ songs, shows }) => {
     <>
       {song
         ? <>
-          <h1>{song.title}</h1> <p>Has been played at the following shows:</p>
+          <h1>{song.title}</h1>
+          <p>Has been played at the following shows:</p>
+
+          <ShowsContainer
+            shows={showsWithSong}
+          />
           </>
 
-        : null}
-
-      {showsWithSong
-        ? <>
-          {showsWithSong.map(show => (
-            <Show
-              key={show.id}
-              show={show}
-            />
-          ))}
-          </>
         : null}
     </>
   );

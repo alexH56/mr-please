@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import Show from './Show';
+import ShowsContainer from './ShowsContainer';
 
 const VenuePage = ({ venues, shows }) => {
   const { venueName } = useParams();
@@ -18,21 +18,16 @@ const VenuePage = ({ venues, shows }) => {
     <>
       {venue
         ? <>
-          <h1>{venue.name}</h1> <p>Has hosted the following shows:</p>
-          </>
+          <h1>{venue.name}</h1>
+          <p>Has hosted the following shows:</p>
+
+          <ShowsContainer
+            shows={showsWithVenue}
+          />
+        </>
 
         : null}
 
-      {showsWithVenue
-        ? <>
-          {showsWithVenue.map(show => (
-            <Show
-              key={show.id}
-              show={show}
-            />
-          ))}
-          </>
-        : null}
     </>
   );
 };
