@@ -7,6 +7,7 @@ import SongList from './SongList';
 import SongPage from './SongPage';
 import VenueList from './VenueList';
 import VenuePage from './VenuePage';
+import ShowsContainer from './ShowsContainer';
 
 // import ShowForm from './components/ShowForm/ShowForm';
 
@@ -102,16 +103,9 @@ const Setlists = () => {
 
         <Route path='/setlists'>
           <h1>Shows performed by Mr. Please: </h1>
-          {shows
-            ? <>
-              {shows.map(show => (
-                <Show
-                  key={show.id}
-                  show={show}
-                />
-              ))}
-            </>
-            : null}
+          <ShowsContainer
+            shows={shows}
+          />
         </Route>
       </Switch>
     </>
