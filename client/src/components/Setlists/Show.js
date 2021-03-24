@@ -1,7 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Show = ({ show }) => {
+  const Card = styled.div`
+    background: papayawhip;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+    /* border-style: solid;
+    border-color: black;
+    border-width: 5px; */
+    border-radius: 20px;
+    width: 85%;
+    margin-bottom: 40px;
+  `;
+
+  // end styles
+
   const { month, day, year } = show.date;
   const date = `${month}/${day}/${year}`;
   const venueName = show.venue.name;
@@ -25,7 +39,7 @@ const Show = ({ show }) => {
   })();
 
   return (
-    <div>
+    <Card>
       <h3>{date} - {venueName}</h3>
 
       {/* {setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
@@ -51,7 +65,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-        </p>
+          </p>
         : null}
 
       {setTwo.length > 0
@@ -64,7 +78,7 @@ const Show = ({ show }) => {
             {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-        </p>
+          </p>
         : null}
 
       {setThree.length > 0
@@ -77,7 +91,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-        </p>
+          </p>
         : null}
 
       {encore.length > 0
@@ -90,7 +104,7 @@ const Show = ({ show }) => {
             {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-        </p>
+          </p>
         : null}
 
       <ul>
@@ -104,7 +118,7 @@ const Show = ({ show }) => {
       {showNotes
         ? <p>Notes: {showNotes}</p>
         : null}
-    </div>
+    </Card>
   );
 };
 
