@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 
 // component imports
-import Show from './Show';
 import SongList from './SongList';
 import SongPage from './SongPage';
 import VenueList from './VenueList';
@@ -62,6 +62,12 @@ const Setlists = () => {
   //     });
   // };
 
+  const Heading = styled.header`
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  `;
+
   return (
     <>
       <nav>
@@ -77,6 +83,7 @@ const Setlists = () => {
           <SongPage
             songs={songs}
             shows={shows}
+            Heading={Heading}
           />
         </Route>
 
@@ -84,6 +91,7 @@ const Setlists = () => {
           <SongList
             songs={songs}
             shows={shows}
+            Heading={Heading}
           />
         </Route>
 
@@ -91,6 +99,7 @@ const Setlists = () => {
           <VenuePage
             venues={venues}
             shows={shows}
+            Heading={Heading}
           />
         </Route>
 
@@ -98,11 +107,14 @@ const Setlists = () => {
           <VenueList
             venues={venues}
             shows={shows}
+            Heading={Heading}
           />
         </Route>
 
         <Route path='/setlists'>
-          <h1>Shows performed by Mr. Please: </h1>
+          <Heading>
+            <h1>Shows performed by Mr. Please: </h1>
+          </Heading>
           <ShowsContainer
             shows={shows}
           />

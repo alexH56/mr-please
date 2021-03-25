@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const VenueList = ({ venues }) => {
+const VenueList = ({ venues, Heading }) => {
   return (
     <>
-      <h1>Venues played by Mr. Please: </h1>
+      <Heading>
+        <h1>Venues played by Mr. Please: </h1>
+      </Heading>
       {venues
         ? <>
           <ul>
@@ -16,7 +18,7 @@ const VenueList = ({ venues }) => {
                 </Link>
               </li>))}
           </ul>
-        </>
+          </>
         : null}
     </>
   );

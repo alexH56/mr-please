@@ -1,10 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { useParams } from 'react-router-dom';
 
 import ShowsContainer from './ShowsContainer';
 
-const SongPage = ({ songs, shows }) => {
+const SongPage = ({ songs, shows, Heading }) => {
   const { songName } = useParams();
   const song = songs
     ? songs.filter(song => song.URLname === songName)[0]
@@ -29,8 +30,10 @@ const SongPage = ({ songs, shows }) => {
     <>
       {song
         ? <>
-          <h1>{song.title}</h1>
-          <p>Has been played at the following shows:</p>
+          <Heading>
+            <h1>{song.title}</h1>
+            <p>Has been played at the following shows:</p>
+          </Heading>
 
           <ShowsContainer
             shows={showsWithSong}

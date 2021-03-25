@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const SongList = ({ songs }) => {
+const SongList = ({ songs, Heading }) => {
   return (
     <>
-      <h1>Songs played by Mr. Please: </h1>
+      <Heading>
+        <h1>Songs played by Mr. Please: </h1>
+      </Heading>
       {songs
         ? <>
           <ul>
