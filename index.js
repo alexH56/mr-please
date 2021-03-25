@@ -19,7 +19,6 @@ app.get('/api/shows', (request, response) => {
   Show
     .find({})
     .then(shows => {
-      console.log(shows);
       response.json(shows);
     })
     .catch(err => console.log('Error finding shows:', err));
