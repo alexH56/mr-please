@@ -11,6 +11,10 @@ const Show = ({ show }) => {
     width: 90%;
     margin-bottom: 40px;
 
+    @media (min-width: 400px) {
+      max-width: 60%;
+    }
+
     a {
       color: palevioletred;
       text-decoration: none;
@@ -79,7 +83,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {setTwo.length > 0
@@ -92,7 +96,7 @@ const Show = ({ show }) => {
             {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {setThree.length > 0
@@ -105,7 +109,7 @@ const Show = ({ show }) => {
             {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       {encore.length > 0
@@ -118,7 +122,7 @@ const Show = ({ show }) => {
             {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
           </span>
         ))}
-          </p>
+        </p>
         : null}
 
       <ul>
