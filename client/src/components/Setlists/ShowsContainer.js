@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Show from './Show';
@@ -19,7 +19,7 @@ const ShowsContainer = ({ shows }) => {
               show={show}
             />
           ))}
-        </>
+          </>
         : null}
     </Container>
   );
