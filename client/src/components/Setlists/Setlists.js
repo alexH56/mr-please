@@ -34,11 +34,11 @@ const Setlists = () => {
         const B = b.date;
 
         if (A.year !== B.year) {
-          return A.year + B.year;
+          return B.year - A.year;
         } else if (A.month !== B.month) {
-          return A.month + B.month;
+          return B.month - A.month;
         } else {
-          return A.day + B.day;
+          return B.day - A.day;
         }
       });
 
