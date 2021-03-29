@@ -1,38 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ShowHeading from './ShowHeading';
 
 const Show = ({ show }) => {
   const Card = styled.div`
     background: papayawhip;
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
     border-radius: 20px;
-    padding: 10px;
-    width: 90%;
+    padding: 20px;
     margin-bottom: 40px;
 
-    @media (min-width: 400px) {
-      max-width: 60%;
+    p {
+      margin-bottom: 0;
     }
 
     a {
       color: palevioletred;
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
     }
-  `;
 
-  const Heading = styled.h3`
-    margin-top: 0;
+    ul {
+      margin-bottom: 0;
+      padding: 0;
+      list-style-type: none;      
+    }
+
+    @media (min-width: 400px) {
+      width: 525px;
+    }
   `;
 
   // end styles
 
   const { month, day, year } = show.date;
   const date = `${month}/${day}/${year}`;
-  const venueName = show.venue.name;
+
+  const venue = show.venue;
 
   const setOne = show.sets[1];
   const setTwo = show.sets[2];
@@ -54,7 +62,14 @@ const Show = ({ show }) => {
 
   return (
     <Card>
-      <Heading>{date} - {venueName}</Heading>
+      <ShowHeading
+        date={date}
+        venue={venue}
+        // venueName={venue.name}
+        // venueURL={venue.URLname}
+        // city={venue.location.city}
+        // state={venue.location.state}
+      />
 
       {/* {setID === 'encore' ? 'Encore: ' : `Set ${setID}: `}
         {set.map((song, index) => (
@@ -121,13 +136,15 @@ const Show = ({ show }) => {
           </p>
         : null}
 
-      <ul>
-        {songNotes.map(note => (
-          <li key={note.id}>
-            {`[${note.id}] ${note.text}`}
-          </li>
-        ))}
-      </ul>
+      {songNotes.length > 0
+        ? <ul>
+          {songNotes.map(note => (
+            <li key={note.id}>
+              {`[${note.id}] ${note.text}`}
+            </li>
+          ))}
+        </ul>
+        : null}
 
       {showNotes
         ? <p>Notes: {showNotes}</p>
