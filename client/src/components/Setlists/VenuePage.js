@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import ShowsContainer from './ShowsContainer';
 
-import styled from 'styled-components';
-
 const VenuePage = ({ venues, shows, Heading }) => {
   const { venueName } = useParams();
   const venue = venues
@@ -28,7 +26,7 @@ const VenuePage = ({ venues, shows, Heading }) => {
           <ShowsContainer
             shows={showsWithVenue}
           />
-        </>
+          </>
 
         : null}
 
