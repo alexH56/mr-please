@@ -64,19 +64,38 @@ const Setlists = () => {
 
   const Heading = styled.header`
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
+    margin: 2rem 0rem;
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700px;
+      margin: 0 0 1rem 0;
+    }
+    
+    p {
+      margin: 0;
+      text-align: center;
+    }
+  `;
+
+  const Navbar = styled.nav`
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: .5rem;
   `;
 
   return (
     <>
-      <nav>
+      <Navbar>
         <Link to='/setlists'>Setlists</Link>
         <br />
         <Link to='/setlists/songs'>Songs</Link>
         <br />
         <Link to='/setlists/venues'>Venues</Link>
-      </nav>
+      </Navbar>
 
       <Switch>
         <Route path='/setlists/songs/:songName'>
@@ -113,7 +132,8 @@ const Setlists = () => {
 
         <Route path='/setlists'>
           <Heading>
-            <h1>Shows performed by Mr. Please: </h1>
+            <h1>Mr. Please</h1>
+            <p>has performed the following shows:</p>
           </Heading>
           <ShowsContainer
             shows={shows}
