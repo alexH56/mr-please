@@ -21,7 +21,7 @@ const Card = styled.section`
       list-style-type: none;      
     }
 
-    @media (min-width: 400px) {
+    @media (min-width: 605px) {
       width: 525px;
     }
   `;
