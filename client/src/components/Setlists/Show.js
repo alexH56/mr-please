@@ -15,15 +15,6 @@ const Card = styled.div`
       margin-bottom: 0;
     }
 
-    a {
-      color: palevioletred;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     ul {
       margin-bottom: 0;
       padding: 0;
@@ -81,7 +72,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setOne}
           value={1}
-          />
+        />
 
         : null}
 
@@ -100,7 +91,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setTwo}
           value={2}
-          />
+        />
 
         : null}
 
@@ -119,7 +110,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setThree}
           value={3}
-          />
+        />
 
         : null}
 
@@ -138,7 +129,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={show.sets.encore}
           value={encore}
-          />
+        />
 
         : null}
 
@@ -149,7 +140,7 @@ const Show = ({ show }) => {
               {`[${note.id}] - ${note.text}`}
             </li>
           ))}
-        </ul>
+          </ul>
         : null}
 
       {showNotes

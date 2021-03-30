@@ -7,6 +7,7 @@ const Heading = styled.h3`
 
     a {
       color: currentColor;
+      text-decoration: none;
 
       &:hover {
         text-decoration: underline;
