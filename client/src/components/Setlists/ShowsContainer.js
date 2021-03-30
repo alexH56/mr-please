@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 import Show from './Show';
 
-const ShowsContainer = ({ shows }) => {
-  const Container = styled.main`
+const Container = styled.main`
         display: flex;
         flex-direction: column;
         align-items: center;
-    `;
+`;
+
+const ShowsContainer = ({ shows }) => {
   return (
     <Container>
       {shows

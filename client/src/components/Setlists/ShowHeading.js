@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const ShowHeading = ({ date, venue }) => {
-  const Heading = styled.h3`
+const Heading = styled.h3`
     margin-top: 0;
 
     a {
@@ -13,8 +12,9 @@ const ShowHeading = ({ date, venue }) => {
         text-decoration: underline;
       }
     }
-  `;
+`;
 
+const ShowHeading = ({ date, venue }) => {
   const { name, URLname = '', location: { city, state } } = venue;
 
   return (

@@ -15,6 +15,31 @@ import ShowsContainer from './ShowsContainer';
 import retrieval from '../../services/retrieval';
 // import posting from '../../services/posting';
 
+const Heading = styled.header`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0rem;
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700px;
+      margin: 0 0 1rem 0;
+    }
+    
+    p {
+      margin: 0;
+      text-align: center;
+    }
+`;
+
+const Navbar = styled.nav`
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: .5rem;
+`;
+
 const Setlists = () => {
   const [songs, setSongs] = useState('');
   const [shows, setShows] = useState('');
@@ -61,31 +86,6 @@ const Setlists = () => {
   //       setShows(shows.concat(returnedShow));
   //     });
   // };
-
-  const Heading = styled.header`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 0rem;
-
-    h1 {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700px;
-      margin: 0 0 1rem 0;
-    }
-    
-    p {
-      margin: 0;
-      text-align: center;
-    }
-  `;
-
-  const Navbar = styled.nav`
-    display: flex;
-    justify-content: space-between;
-
-    padding-top: .5rem;
-  `;
 
   return (
     <>
