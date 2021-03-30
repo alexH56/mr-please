@@ -23,8 +23,6 @@ const SongPage = ({ songs, shows, Heading }) => {
     })
     : null;
 
-  //   console.log(showsWithSong);
-
   return (
     <>
       {song
@@ -37,7 +35,7 @@ const SongPage = ({ songs, shows, Heading }) => {
           <ShowsContainer
             shows={showsWithSong}
           />
-        </>
+          </>
 
         : null}
     </>
