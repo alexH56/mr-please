@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import VenuesContainer from './VenuesContainer';
 
 const VenueList = ({ venues, Heading }) => {
   return (
@@ -8,18 +8,10 @@ const VenueList = ({ venues, Heading }) => {
       <Heading>
         <h1>Venues played by Mr. Please: </h1>
       </Heading>
-      {venues
-        ? <>
-          <ul>
-            {venues.map(venue => (
-              <li key={venue.id}>
-                <Link to={`/setlists/venues/${venue.URLname}`}>
-                  {venue.name}
-                </Link>
-              </li>))}
-          </ul>
-          </>
-        : null}
+
+      <VenuesContainer
+        venues={venues}
+      />
     </>
   );
 };
