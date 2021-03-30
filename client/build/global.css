@@ -1,3 +1,9 @@
 html {
     background: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    padding: 0% 7.5%;
 }
