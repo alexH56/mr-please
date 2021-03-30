@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import SongsContainer from './SongsContainer';
 
 const SongList = ({ songs, Heading }) => {
   return (
@@ -9,16 +9,9 @@ const SongList = ({ songs, Heading }) => {
         <h1>Songs played by Mr. Please: </h1>
       </Heading>
       {songs
-        ? <>
-          <ul>
-            {songs.map(song => (
-              <li key={song.id}>
-                <Link to={`/setlists/songs/${song.URLname}`}>
-                  {song.title}
-                </Link>
-              </li>))}
-          </ul>
-        </>
+        ? <SongsContainer
+          songs={songs}
+          />
         : null}
     </>
   );
