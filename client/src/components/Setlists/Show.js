@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ShowHeading from './ShowHeading';
 import Set from './Set';
 
-const Card = styled.div`
+const Card = styled.section`
     background: papayawhip;
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
     border-radius: 20px;
@@ -72,7 +72,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setOne}
           value={1}
-        />
+          />
 
         : null}
 
@@ -91,7 +91,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setTwo}
           value={2}
-        />
+          />
 
         : null}
 
@@ -110,7 +110,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={setThree}
           value={3}
-        />
+          />
 
         : null}
 
@@ -129,7 +129,7 @@ const Show = ({ show }) => {
         ? <Set
           songs={show.sets.encore}
           value={encore}
-        />
+          />
 
         : null}
 
@@ -140,7 +140,7 @@ const Show = ({ show }) => {
               {`[${note.id}] - ${note.text}`}
             </li>
           ))}
-          </ul>
+        </ul>
         : null}
 
       {showNotes
