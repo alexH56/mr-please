@@ -57,6 +57,38 @@ const Show = ({ show }) => {
         venue={venue}
       />
 
+      {setOne.length > 0
+        ? <Set
+          songs={setOne}
+          value={1}
+        />
+
+        : null}
+
+      {setTwo.length > 0
+        ? <Set
+          songs={setTwo}
+          value={2}
+        />
+
+        : null}
+
+      {setThree.length > 0
+        ? <Set
+          songs={setThree}
+          value={3}
+        />
+
+        : null}
+
+      {encore.length > 0
+        ? <Set
+          songs={show.sets.encore}
+          value={encore}
+        />
+
+        : null}
+
       {/* <p>Set One: {setOne.map((song, index) => (
           <span key={song.title}>
             <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
@@ -68,71 +100,6 @@ const Show = ({ show }) => {
         ))}
         </p> */}
 
-      {setOne.length > 0
-        ? <Set
-          songs={setOne}
-          value={1}
-          />
-
-        : null}
-
-      {/* <p>Set Two: {setTwo.map((song, index) => (
-          <span key={song.title}>
-            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
-              {song.title}
-            </Link>
-            {song.note ? <sup>[{song.note.id}]</sup> : null}
-            {index === setTwo.length - 1 ? null : (song.transition ? ' > ' : ', ')}
-          </span>
-        ))}
-        </p> */}
-
-      {setTwo.length > 0
-        ? <Set
-          songs={setTwo}
-          value={2}
-          />
-
-        : null}
-
-      {/* <p>Set Three: {setOne.map((song, index) => (
-          <span key={song.title}>
-            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
-              {song.title}
-            </Link>
-            {song.note ? <sup>[{song.note.id}]</sup> : null}
-            {index === setOne.length - 1 ? null : (song.transition ? ' > ' : ', ')}
-          </span>
-        ))}
-        </p> */}
-
-      {setThree.length > 0
-        ? <Set
-          songs={setThree}
-          value={3}
-          />
-
-        : null}
-
-      {/* <p>Encore: {encore.map((song, index) => (
-          <span key={song.title}>
-            <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
-              {song.title}
-            </Link>
-            {song.note ? <sup>[{song.note.id}]</sup> : null}
-            {index === encore.length - 1 ? null : (song.transition ? ' > ' : ', ')}
-          </span>
-        ))}
-        </p> */}
-
-      {encore.length > 0
-        ? <Set
-          songs={show.sets.encore}
-          value={encore}
-          />
-
-        : null}
-
       {songNotes.length > 0
         ? <ul>
           {songNotes.map(note => (
@@ -140,7 +107,7 @@ const Show = ({ show }) => {
               {`[${note.id}] - ${note.text}`}
             </li>
           ))}
-        </ul>
+          </ul>
         : null}
 
       {showNotes
