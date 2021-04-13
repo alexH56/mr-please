@@ -19,9 +19,10 @@ const Set = ({ songs, value }) => {
     <SetWrapper>
       <p>{value === 'encore' ? 'Encore:' : `Set ${value}:`} {songs.map((song, index) => (
         <span key={song.title}>
-          <Link to={`/setlists/songs/${song.URLname}`} key={song.title}>
+          <Link to={`/setlists/songs/${song.URLname}`} key={index}>
             {song.title}
           </Link>
+          {/* use of index as key is unideal, but necessary to avoid duplicate keys until a solution is implemented in the data layer -likely a function to check and alter id value upon show input */}
           {song.note ? <sup>[{song.note.id}]</sup> : null}
           {index === songs.length - 1 ? null : (song.transition ? ' > ' : ', ')}
         </span>
