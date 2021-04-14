@@ -2,17 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Container = styled.main`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        ul {
-          list-style-type: none;
-        }
-    `;
-
-const SongsContainer = ({ songs }) => {
+const SongsContainer = ({ songs, Container }) => {
   const sortedSongs = [...songs].sort((a, b) => (
     a.title > b.title
       ? 1
@@ -31,7 +21,7 @@ const SongsContainer = ({ songs }) => {
                 {song.title}
               </Link>
             </li>))}
-        </ul>
+          </ul>
         : null}
     </Container>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 import VenuesContainer from './VenuesContainer';
 
-const VenueList = ({ venues, Heading }) => {
+const VenueList = ({ venues, Heading, Container }) => {
   return (
     <>
       <Heading>
@@ -11,6 +11,7 @@ const VenueList = ({ venues, Heading }) => {
 
       <VenuesContainer
         venues={venues}
+        Container={Container}
       />
     </>
   );

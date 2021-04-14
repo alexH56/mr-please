@@ -2,7 +2,7 @@ import React from 'react';
 
 import SongsContainer from './SongsContainer';
 
-const SongList = ({ songs, Heading }) => {
+const SongList = ({ songs, Heading, Container }) => {
   return (
     <>
       <Heading>
@@ -11,6 +11,7 @@ const SongList = ({ songs, Heading }) => {
       {songs
         ? <SongsContainer
           songs={songs}
+          Container={Container}
           />
         : null}
     </>
