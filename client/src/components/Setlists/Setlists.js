@@ -33,13 +33,6 @@ const Heading = styled.header`
     }
 `;
 
-const Navbar = styled.nav`
-    display: flex;
-    justify-content: space-between;
-
-    padding-top: .5rem;
-`;
-
 const Setlists = () => {
   const [songs, setSongs] = useState('');
   const [shows, setShows] = useState('');
@@ -88,59 +81,49 @@ const Setlists = () => {
   // };
 
   return (
-    <>
-      <Navbar>
-        <Link to='/setlists'>Setlists</Link>
-        <br />
-        <Link to='/setlists/songs'>Songs</Link>
-        <br />
-        <Link to='/setlists/venues'>Venues</Link>
-      </Navbar>
+    <Switch>
+      <Route path='/setlists/songs/:songName'>
+        <SongPage
+          songs={songs}
+          shows={shows}
+          Heading={Heading}
+        />
+      </Route>
 
-      <Switch>
-        <Route path='/setlists/songs/:songName'>
-          <SongPage
-            songs={songs}
-            shows={shows}
-            Heading={Heading}
-          />
-        </Route>
+      <Route path='/setlists/songs'>
+        <SongList
+          songs={songs}
+          shows={shows}
+          Heading={Heading}
+        />
+      </Route>
 
-        <Route path='/setlists/songs'>
-          <SongList
-            songs={songs}
-            shows={shows}
-            Heading={Heading}
-          />
-        </Route>
+      <Route path='/setlists/venues/:venueName'>
+        <VenuePage
+          venues={venues}
+          shows={shows}
+          Heading={Heading}
+        />
+      </Route>
 
-        <Route path='/setlists/venues/:venueName'>
-          <VenuePage
-            venues={venues}
-            shows={shows}
-            Heading={Heading}
-          />
-        </Route>
+      <Route path='/setlists/venues'>
+        <VenueList
+          venues={venues}
+          shows={shows}
+          Heading={Heading}
+        />
+      </Route>
 
-        <Route path='/setlists/venues'>
-          <VenueList
-            venues={venues}
-            shows={shows}
-            Heading={Heading}
-          />
-        </Route>
-
-        <Route path='/setlists'>
-          <Heading>
-            <h1>Mr. Please</h1>
-            <p>has performed the following shows:</p>
-          </Heading>
-          <ShowsContainer
-            shows={shows}
-          />
-        </Route>
-      </Switch>
-    </>
+      <Route path='/setlists'>
+        <Heading>
+          <h1>Mr. Please</h1>
+          <p>has performed the following shows:</p>
+        </Heading>
+        <ShowsContainer
+          shows={shows}
+        />
+      </Route>
+    </Switch>
   );
 };
 
