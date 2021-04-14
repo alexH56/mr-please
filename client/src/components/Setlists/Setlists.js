@@ -15,25 +15,6 @@ import ShowsContainer from './ShowsContainer';
 import retrieval from '../../services/retrieval';
 // import posting from '../../services/posting';
 
-const Heading = styled.header`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin: 2rem 0rem; */
-    padding: 7.5%;
-    text-align: center;
-
-    h1 {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700px;
-      margin: 0;
-    }
-    
-    p {
-      margin: 1rem 0 0 0;
-    }
-`;
-
 const Container = styled.main`
         display: flex;
         flex-direction: column;
@@ -60,7 +41,7 @@ const Container = styled.main`
         }
     `;
 
-const Setlists = () => {
+const Setlists = ({ Heading }) => {
   const [songs, setSongs] = useState('');
   const [shows, setShows] = useState('');
   const [venues, setVenues] = useState('');

@@ -28,6 +28,25 @@ const Navbar = styled.nav`
   }
 `;
 
+const Heading = styled.header`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 2rem 0rem; */
+    padding: 2rem 7.5%;
+    text-align: center;
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700px;
+      margin: 0;
+    }
+    
+    p {
+      margin: 1rem 0 0 0;
+    }
+`;
+
 const App = () => {
   return (
     <div className='App'>
@@ -42,11 +61,15 @@ const App = () => {
 
       <Switch>
         <Route path='/setlists'>
-          <Setlists />
+          <Setlists
+            Heading={Heading}
+          />
         </Route>
 
         <Route path='/'>
-          <Home />
+          <Home
+            Heading={Heading}
+          />
         </Route>
       </Switch>
 
