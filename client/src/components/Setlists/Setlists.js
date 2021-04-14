@@ -19,19 +19,46 @@ const Heading = styled.header`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0rem;
+    /* margin: 2rem 0rem; */
+    padding: 7.5%;
+    text-align: center;
 
     h1 {
       font-family: 'Roboto', sans-serif;
       font-weight: 700px;
-      margin: 0 0 1rem 0;
+      margin: 0;
     }
     
     p {
-      margin: 0;
-      text-align: center;
+      margin: 1rem 0 0 0;
     }
 `;
+
+const Container = styled.main`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          & li {
+            margin: 0 0 .5rem 0;
+          }
+
+          & a {
+            color: black;
+            text-decoration: underline;
+            
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+    `;
 
 const Setlists = () => {
   const [songs, setSongs] = useState('');
@@ -95,6 +122,7 @@ const Setlists = () => {
           songs={songs}
           shows={shows}
           Heading={Heading}
+          Container={Container}
         />
       </Route>
 
@@ -111,6 +139,7 @@ const Setlists = () => {
           venues={venues}
           shows={shows}
           Heading={Heading}
+          Container={Container}
         />
       </Route>
 
