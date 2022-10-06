@@ -1,24 +1,20 @@
 {
   "name": "mr-please",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "Alex Hamilton",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.11.7",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1"
   }
 }
