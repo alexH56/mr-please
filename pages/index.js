@@ -13,6 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Image src="/../public/wordmark_logo.png" width="306" height="396" />
+        <br />
         <h1 className={styles.title}>Coming Soon</h1>
       </main>
     </div>
