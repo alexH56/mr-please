@@ -1,13 +1,17 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
   "extends": [
-    "airbnb"
+    "plugin:@next/next/recommended",
+    "airbnb",
+    "airbnb/hooks"
   ],
   "rules": {
-    "prettier/prettier": [
-        "error",
-        { "singleQuote": true, "semi": false, "tabWidth": 4 }
-    ],
+    "react/jsx-indent-props": ["error", 4],
     "react/jsx-indent": ["error", 4],
-    "indent": ["error", 4],
+    "indent": ["error", 4]
   }
 }
