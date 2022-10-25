@@ -20,7 +20,7 @@
 
 # Next.js build output
 .next/
-.out
+out/
 
 npm-debug.log*
 yarn-debug.log*
