@@ -14,7 +14,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {<Image src={wordmarkLogo} width="306" height="396" />}
+        {
+          <Image
+            src={wordmarkLogo}
+            width="306"
+            height="396"
+            className="hvr-hang"
+            style={{ paddingBottom: "2rem" }}
+          />
+        }
 
         <h1 className={styles.title}>Coming Soon</h1>
       </main>
