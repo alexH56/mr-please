@@ -1,81 +1,32 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": ["airbnb"],
-    "plugins": ["prettier"],
-    "rules": {
-        "prettier/prettier": "error",
-        "no-unused-vars": "warn",
-        "no-console": "off",
-        "func-names": "off",
-        "no-process-exit": "off",
-        "object-shorthand": "off",
-        "class-methods-use-this": "off"
-    }
-
-    /* "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": ["react", "prettier"],
-    "rules": {
-        "prettier/prettier": [
-            "error",
-            { "singleQuote": true, "semi": false, "tabWidth": 4 }
-        ],
-        "react/require-default-props": [
-            "error",
-            {
-                "ignoreFunctionalComponents": true // https://github.com/reactjs/rfcs/pull/107
-            }
-        ],
-        "react/function-component-definition": [
-            "warn",
-            {
-                "namedComponents": "function-declaration",
-                "unnamedComponents": "arrow-function"
-            }
-        ],
-        "no-unused-expressions": [
-            "error",
-            {
-                "allowShortCircuit": true,
-                "allowTernary": true
-            }
-        ],
-        "no-param-reassign": [
-            "error",
-            { "props": true, "ignorePropertyModificationsForRegex": ["^state"] }
-        ],
-        "camelcase": [
-            "off",
-            {
-                "properties": "never",
-                "ignoreDestructuring": true
-            }
-        ],
-        "import/prefer-default-export": "off",
-        // "react/no-unstable-nested-components": ["warn"],
-        // "react-hooks/exhaustive-deps": "warn",
-        // "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
-        "jsx-a11y/label-has-associated-control": ["warn"],
-        // "no-shadow": ["warn"],
-        // "no-nested-ternary": ["warn"],
-        // "prefer-destructuring": ["warn"],
-        "radix": "off",
-        "react/forbid-prop-types": "off",
-        "react/prop-types": "off", // to be address after refactor
-        "react/no-unescaped-entities": "off", // currently affects only apostrophes. seems unneccessary to keep.
-        "@next/next/no-img-element": "off", // need to figure out content CDN before implementing next images
-        "import/no-unresolved": "off", // doesn't work well with absolute imports and having a hard time finding good solution
-        "import/no-extraneous-dependencies": "off", // affects Tailwind being in dependencies vs devDependencies
-        "global-require": "off", // allows tailwind.config plugins
-        "no-underscore-dangle": "off" // OpenSearch has dangling underscores
-    } */
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "jsx-a11y/href-no-hash": ["off"],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "max-len": [
+      "warn",
+      {
+        "code": 80,
+        "tabWidth": 2,
+        "comments": 80,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  }
 }
