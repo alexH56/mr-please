@@ -20,9 +20,11 @@ export default function Home() {
             width="306"
             height="396"
             className="hvr-hang"
-            style={{ paddingBottom: "4rem" }}
           />
         }
+        <br />
+        <br />
+        <br />
 
         <h1 className={styles.title}>Coming Soon</h1>
       </main>
