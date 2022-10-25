@@ -20,7 +20,7 @@ export default function Home() {
             width="306"
             height="396"
             className="hvr-hang"
-            style={{ paddingBottom: "2rem" }}
+            style={{ paddingBottom: "4rem" }}
           />
         }
 
