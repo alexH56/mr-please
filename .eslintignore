@@ -1,0 +1,17 @@
+.next
+.circleci
+.husky
+.swc
+public
+out
+lib
+coverage
+postcss.config.js
+node_modules
+yarn.lock
+next.config.json
+infra/*
+**/*.test.js
+*.tsx
+*.yaml
+*.yml
