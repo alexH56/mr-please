@@ -4,6 +4,7 @@ import React from 'react';
 import Head from 'next/head';
 // import Image from 'next/image';
 // import wordmarkLogo from '../public/wordmark_logo.png';
+import { Text } from '@nextui-org/react';
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             </Head>
 
             <main>
+                <Text h1>Coming Soon</Text>
                 {/*  <Image
                     src={wordmarkLogo}
                     width="306"
