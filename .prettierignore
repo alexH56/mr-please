@@ -2,5 +2,6 @@
 node_modules
 out
 next.config.js
+utils/strings.js
 *.yaml
 *.yml

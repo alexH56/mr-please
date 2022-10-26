@@ -2,14 +2,12 @@
 import React from 'react';
 
 import Head from 'next/head';
-import Image from 'next/image';
-
-import styles from '../styles/Home.module.css';
-import wordmarkLogo from '../public/wordmark_logo.png';
+// import Image from 'next/image';
+// import wordmarkLogo from '../public/wordmark_logo.png';
 
 export default function Home() {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Mr. Please</title>
                 <meta
@@ -19,18 +17,13 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <Image
+            <main>
+                {/*  <Image
                     src={wordmarkLogo}
                     width="306"
                     height="396"
                     className="hvr-hang"
-                />
-                <br />
-                <br />
-                <br />
-
-                <h1 className={styles.title}>Coming Soon</h1>
+                /> */}
             </main>
         </div>
     );
