@@ -3,15 +3,36 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+
 import { NextUIProvider } from '@nextui-org/react';
 import { theme, overrides } from '../styles/theme';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
     overrides();
+    const chakraTheme = extendTheme({
+        components: {
+            FormLabel: {
+                baseStyle: {
+                    marginBottom: '4px',
+                    opacity: 0.75,
+                    fontWeight: 'regular',
+                    fontSize: '0.8rem',
+                },
+            },
+            Heading: {
+                baseStyle: {
+                    fontWeight: 'black',
+                },
+            },
+        },
+    });
     return (
         <NextUIProvider theme={theme}>
-            <Component {...pageProps} />
+            <ChakraProvider theme={chakraTheme}>
+                <Component {...pageProps} />
+            </ChakraProvider>
         </NextUIProvider>
     );
 }
