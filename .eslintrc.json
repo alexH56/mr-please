@@ -17,6 +17,7 @@
     "semi": "off",
     "object-curly-newline": ["error", {
       "ImportDeclaration": "never"
-  }]
+  }],
+  "react/prop-types": "off"
   }
 }
