@@ -8,6 +8,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { NextUIProvider } from '@nextui-org/react';
 import { theme, overrides } from '../styles/theme';
 import '../styles/globals.css';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
     overrides();
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <NextUIProvider theme={theme}>
             <ChakraProvider theme={chakraTheme}>
+                <Navbar />
                 <Component {...pageProps} />
             </ChakraProvider>
         </NextUIProvider>
