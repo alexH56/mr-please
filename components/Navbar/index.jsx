@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
@@ -5,34 +6,37 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {
     Box,
     Flex,
-    Avatar,
     HStack,
     Link,
     IconButton,
-    Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
     useDisclosure,
-    useColorModeValue,
     Stack,
     Text,
 } from '@chakra-ui/react';
 // eslint-disable-next-line import/no-named-default
 import { default as NextLink } from 'next/link';
-
+import Logo from '../Logo';
 import MenuItems from './MenuItems';
 
-import Logo from '../components/Logo';
+function NavLink({ children, href, isExternal }) {
+    const content = (
+        <Text className="text-black font-bold hover:underline hover:cursor-pointer">
+            {children}
+        </Text>
+    );
 
-function NavLink({ children, href }) {
+    if (isExternal) {
+        return (
+            // eslint-disable-next-line react/jsx-no-target-blank
+            <a href={href} key={href} target="_blank" rel="noopener">
+                {content}
+            </a>
+        );
+    }
+
     return (
         <Link as={NextLink} key={href} href={href}>
-            <Text className="text-black font-bold hover:underline hover:cursor-pointer">
-                {children}
-            </Text>
+            {content}
         </Link>
     );
 }
@@ -41,7 +45,7 @@ export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const menuList = MenuItems.map((link) => (
-        <NavLink href={link.href} key={link.href}>
+        <NavLink href={link.href} key={link.href} isExternal={link.isExternal}>
             {link.text}
         </NavLink>
     ));
@@ -59,10 +63,7 @@ export default function Navbar() {
     );
 
     return (
-        <Box
-            // bg={useColorModeValue('ittBlue.900', 'ittBlue.900')}
-            px={4}
-        >
+        <Box px={4} className="main-navbar shadow-lg">
             <Flex h={20} alignItems="center" justifyContent="space-between">
                 <IconButton
                     size="md"
@@ -83,7 +84,7 @@ export default function Navbar() {
                     </HStack>
                 </HStack>
                 <Flex alignItems="center">
-                    <Menu>
+                    {/* <Menu>
                         <MenuButton
                             as={Button}
                             rounded="full"
@@ -105,7 +106,7 @@ export default function Navbar() {
                                 Log out
                             </MenuItem>
                         </MenuList>
-                    </Menu>
+                    </Menu> */}
                 </Flex>
             </Flex>
             {mobileMenu}
