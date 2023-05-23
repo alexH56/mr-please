@@ -7,7 +7,7 @@ import Head from 'next/head';
 // import { Text } from '@nextui-org/react';
 import { Text, Card, Button, Spacer } from '@nextui-org/react';
 
-import Nav from '../components/Navbar';
+import Nav from '../../components/Navbar';
 
 export default function Home() {
     return (
