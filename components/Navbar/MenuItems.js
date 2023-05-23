@@ -1,11 +1,11 @@
 const MenuItems = [
-    { href: '/shows', text: 'Shows', external: false },
-    { href: '/music', text: 'Music', external: false },
+    { href: '/shows', text: 'Shows', isExternal: false },
+    { href: '/music', text: 'Music', isExternal: false },
     {
         href: 'https://www.youtube.com/@mrpleasemusic',
         text: 'Videos',
-        external: true,
+        isExternal: true,
     },
-    { href: 'https://mr-please.square.site/', text: 'Store', external: true },
+    { href: 'https://mr-please.square.site/', text: 'Store', isExternal: true },
 ];
 export default MenuItems;
