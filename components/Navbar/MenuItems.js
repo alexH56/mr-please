@@ -1,6 +1,10 @@
 const MenuItems = [
     { href: '/shows', text: 'Shows', isExternal: false },
-    { href: '/music', text: 'Music', isExternal: false },
+    {
+        href: 'https://open.spotify.com/artist/13xXFwk6zMywJAeafHIQYs?si=8W_yUAmIQOSWI4dCOLxSCQ',
+        text: 'Music',
+        isExternal: true,
+    },
     {
         href: 'https://www.youtube.com/@mrpleasemusic',
         text: 'Videos',
