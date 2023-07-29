@@ -126,7 +126,7 @@ function CardContents({ show }) {
             </div>
         </Card.Body>
     );
-    console.log(isMobile);
+
     if (isMobile) {
         return mobileBody;
     }
