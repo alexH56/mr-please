@@ -1,14 +1,5 @@
 export const upcomingShows = [
     {
-        date: 'Aug 4',
-        city: 'Louisville, KY',
-        venue: 'Seven Sense Music Festival',
-        tickets: 'https://sevensensefest.com/tickets',
-        details:
-            'https://www.facebook.com/events/987387722612774/987389545945925/',
-        free: false,
-    },
-    {
         date: 'Aug 20',
         city: 'Louisville, KY',
         venue: 'Sunday Service @ Mellwood Tavern',
@@ -40,6 +31,7 @@ export const upcomingShows = [
         details: 'https://kindaspoopy.com/',
         tickets:
             'https://www.eventbrite.com/e/kinda-spoopy-ii-the-spirits-return-tickets-449091604077?aff=ebdssbdestsearch',
+        free: false,
     },
     // {
     //     date: 'Oct 13',
@@ -47,6 +39,7 @@ export const upcomingShows = [
     //     venue: 'Grateville Dead Music Festival',
     //     details: '',
     //     tickets: '',
+    //     free: false,
     // },
     {
         date: 'Oct 27',
@@ -54,6 +47,7 @@ export const upcomingShows = [
         venue: 'Please-o-ween @ Mellwood Tavern',
         details: '',
         tickets: '',
+        free: false,
     },
     // {
     //     date: 'Dec 15',
@@ -61,5 +55,6 @@ export const upcomingShows = [
     //     venue: "Stanley's Pub",
     //     details: '',
     //     tickets: '',
+    //     free: false,
     // },
 ];
