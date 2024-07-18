@@ -1,29 +1,20 @@
 export const upcomingShows = [
     {
-        date: 'Dec 15',
-        city: 'Cincinnati, OH',
-        venue: "Stanley's Pub",
-        details: 'https://www.facebook.com/events/1007902510440234',
-        tickets: '',
-        free: false,
-    },
-    // {
-    //     date: 'Dec 23',
-    //     city: 'Louisville, KY',
-    //     venue: 'Mr. Please Presents: The Night Before the Night Before Chrismas @ Zanzabar',
-    //     details: '',
-    //     tickets: '',
-    //     free: false,
-    // },
-    {
-        date: 'Apr 7-9',
-        city: 'Medora, IN',
-        venue: 'Moon Shadow Festival',
-        details: 'https://www.facebook.com/events/3561907817379578',
-        tickets:
-            'https://www.themoonshadowfest.com/event-details/marengo-moon-shadow-festival-2024',
-        free: false,
-    },
+            date: 'Aug 9',
+            city: 'Nashville, IN',
+            venue: 'Harmony Valley Music Festival',
+            details: 'https://www.harmonyvalleyfest.com/about',
+            tickets: 'https://harmonyvalleymusicfestival.ticketspice.com/harmony-valley-music-festival-2024',
+            free: false,
+        },
+        {
+            date: 'Sept 7',
+            city: 'Louisville, KY',
+            venue: 'Headliners Music Hall',
+            details: 'https://www.etix.com/ticket/p/94049648/mrplease-album-release-show-louisville-headliners-music-hall?partner_id=100&clickref=1100lyIE7kra',
+            tickets: 'https://www.etix.com/ticket/p/94049648/mrplease-album-release-show-louisville-headliners-music-hall?partner_id=100&clickref=1100lyIE7kra',
+            free: false,
+        },
 ];
 
 // {
