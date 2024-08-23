@@ -7,10 +7,8 @@ import { PleaseHead } from '../PleaseHead';
 
 export default function Logo() {
     return (
-        <Link passHref href="/">
-            <a href="/">
-                <PleaseHead />
-            </a>
+        <Link href="/">
+            <PleaseHead />
         </Link>
     );
 }
