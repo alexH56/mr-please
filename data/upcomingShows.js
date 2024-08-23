@@ -1,27 +1,19 @@
 export const upcomingShows = [
     {
-        date: 'Dec 15',
-        city: 'Cincinnati, OH',
-        venue: "Stanley's Pub",
-        details: 'https://www.facebook.com/events/1007902510440234',
-        tickets: '',
+        date: 'Sept 7',
+        city: 'Louisville, KY',
+        venue: "Album Release Party @ Headliners Music Hall w/ Pushing Daisy's Band",
+        details: 'https://www.facebook.com/events/1020137906166501/',
+        tickets:
+            'https://www.etix.com/ticket/p/94049648/mrplease-album-release-show-louisville-headliners-music-hall',
         free: false,
     },
-    // {
-    //     date: 'Dec 23',
-    //     city: 'Louisville, KY',
-    //     venue: 'Mr. Please Presents: The Night Before the Night Before Chrismas @ Zanzabar',
-    //     details: '',
-    //     tickets: '',
-    //     free: false,
-    // },
     {
-        date: 'Apr 7-9',
-        city: 'Medora, IN',
-        venue: 'Moon Shadow Festival',
-        details: 'https://www.facebook.com/events/3561907817379578',
-        tickets:
-            'https://www.themoonshadowfest.com/event-details/marengo-moon-shadow-festival-2024',
+        date: 'Sept 26',
+        city: 'Louisville, KY',
+        venue: 'String Cheese Incident \n Afterparty @ Mercury Ballroom',
+        details: 'https://www.facebook.com/events/866378698731258/',
+        tickets: 'https://concerts.livenation.com/event/160060FEE37B7966',
         free: false,
     },
 ];
