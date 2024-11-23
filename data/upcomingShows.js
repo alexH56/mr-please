@@ -1,19 +1,18 @@
 export const upcomingShows = [
     {
-        date: 'Sept 7',
-        city: 'Louisville, KY',
-        venue: "Album Release Party @ Headliners Music Hall w/ Pushing Daisy's Band",
-        details: 'https://www.facebook.com/events/1020137906166501/',
-        tickets:
-            'https://www.etix.com/ticket/p/94049648/mrplease-album-release-show-louisville-headliners-music-hall',
+        date: 'Dec 7',
+        city: 'Indianapolis, IN',
+        venue: 'The Mousetrap',
+        details: 'https://www.facebook.com/events/1085298276486382',
+        tickets: 'https://www.eventbrite.com/e/squeaky-feet-w-mr-please-the-mousetrap-saturday-december-7th-tickets-1075681284679',
         free: false,
     },
     {
-        date: 'Sept 26',
+        date: 'Dec 21',
         city: 'Louisville, KY',
-        venue: 'String Cheese Incident \n Afterparty @ Mercury Ballroom',
-        details: 'https://www.facebook.com/events/866378698731258/',
-        tickets: 'https://concerts.livenation.com/event/160060FEE37B7966',
+        venue: 'Zanzabar',
+        // details: '',
+        tickets: 'https://zanzabarlouisville.com/event/pleasemas/zanzabar/louisville-kentucky/',
         free: false,
     },
 ];
