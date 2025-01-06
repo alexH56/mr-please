@@ -86,7 +86,7 @@ export default function Home() {
 
 			{/* Footer */}
 			<footer className="bg-black text-white py-8 flex items-center justify-center">
-				<div className="container mx-auto flex justify-between items-center px-4">
+				<div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center px-4">
 					<p>
 						booking:{' '}
 						<a
