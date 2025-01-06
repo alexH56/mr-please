@@ -131,3 +131,9 @@ div {
   animation-fill-mode: forwards;
   animation-direction: normal, alternate;
 }
+
+/* Floating head transition */
+.floating-head-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
