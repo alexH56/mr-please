@@ -22,7 +22,7 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-75">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-black text-white bg-opacity-75">
 			<div className="container mx-auto px-4">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center gap-4">
@@ -85,18 +85,13 @@ export default function Header() {
 						>
 							Tour
 						</Link>
-						<Link
+						{/* <Link
 							href="#gallery"
 							className="hover:text-gray-300"
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Gallery
-						</Link>
-						<Button asChild>
-							<Link href="#" target="_blank" rel="noopener noreferrer">
-								Buy Tickets
-							</Link>
-						</Button>
+						</Link> */}
 					</div>
 				</nav>
 			)}

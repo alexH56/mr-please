@@ -1,32 +1,42 @@
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 
 const tourDates = [
-  { date: "July 15, 2023", venue: "Rockstar Arena, New York", ticketLink: "#" },
-  { date: "July 22, 2023", venue: "Melody Hall, Los Angeles", ticketLink: "#" },
-  { date: "July 29, 2023", venue: "Rhythm Stadium, Chicago", ticketLink: "#" },
-  { date: "August 5, 2023", venue: "Harmony Center, Houston", ticketLink: "#" },
-]
+	{ date: 'July 15, 2023', venue: 'Rockstar Arena, New York', ticketLink: '#' },
+	{ date: 'July 22, 2023', venue: 'Melody Hall, Los Angeles', ticketLink: '#' },
+	{ date: 'July 29, 2023', venue: 'Rhythm Stadium, Chicago', ticketLink: '#' },
+	{ date: 'August 5, 2023', venue: 'Harmony Center, Houston', ticketLink: '#' },
+];
 
 export default function TourDates() {
-  return (
-    <section id="tour-dates" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center">Upcoming Tour Dates</h2>
-        <div className="space-y-4">
-          {tourDates.map((event, index) => (
-            <div key={index} className="flex flex-col sm:flex-row justify-between items-center bg-gray-700 p-4 rounded-lg">
-              <div>
-                <h3 className="font-semibold">{event.date}</h3>
-                <p>{event.venue}</p>
-              </div>
-              <Button asChild className="mt-2 sm:mt-0">
-                <a href={event.ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
-              </Button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+	return (
+		<section id="tour-dates" className="py-20 bg-gray-100">
+			<div className="container mx-auto px-4">
+				<h2 className="text-4xl font-bold mb-8 text-center">
+					Upcoming Tour Dates
+				</h2>
+				<div className="space-y-4">
+					{tourDates.map((event) => (
+						<div
+							key={`${event.date}-${event.venue}`}
+							className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md p-4 rounded-lg"
+						>
+							<div>
+								<h3 className="font-semibold">{event.date}</h3>
+								<p>{event.venue}</p>
+							</div>
+							<Button asChild className="mt-2 sm:mt-0">
+								<a
+									href={event.ticketLink}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Get Tickets
+								</a>
+							</Button>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 }
-
