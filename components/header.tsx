@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,14 +49,36 @@ export default function Header() {
 						<Link href="#tour-dates" className="hover:text-gray-300">
 							Tour
 						</Link>
-						<Link href="#gallery" className="hover:text-gray-300">
+
+						<div className="flex space-x-4">
+							<a
+								href="https://facebook.com/mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="hover:text-gray-300"
+							>
+								<Facebook size={24} />
+							</a>
+							<a
+								href="https://instagram.com/mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="hover:text-gray-300"
+							>
+								<Instagram size={24} />
+							</a>
+							<a
+								href="https://youtube.com/mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="hover:text-gray-300"
+							>
+								<Youtube size={24} />
+							</a>
+						</div>
+						{/* <Link href="#gallery" className="hover:text-gray-300">
 							Gallery
-						</Link>
-						<Button asChild>
-							<Link href="#" target="_blank" rel="noopener noreferrer">
-								Buy Tickets
-							</Link>
-						</Button>
+						</Link> */}
 					</nav>
 					<button
 						type="button"
