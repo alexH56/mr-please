@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mr. Please - Official Website & Setlist Tracker
 
-## Getting Started
+This repository contains the official website for the band Mr. Please, along with an upcoming setlist tracking application. The platform will provide fans with an interactive way to explore the band's performances and dive into statistics about their shows.
 
-First, run the development server:
+## 🎸 Project Overview
+
+- Band website with dynamic content
+- Upcoming setlist tracking functionality
+- Performance statistics and analytics
+- Modern, responsive design
+
+## 🛠️ Technology Stack
+
+### Core Technologies
+
+- **[Next.js](https://nextjs.org/)** (v14) - React framework for production-grade applications
+- **[React](https://react.dev/)** (v18) - UI library with functional component approach
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+
+### Styling & UI
+
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[tailwind-merge](https://github.com/dcastil/tailwind-merge)** - Merge Tailwind CSS classes without style conflicts
+- **[class-variance-authority](https://cva.style/)** - Type-safe variant management
+- **[Lucide React](https://lucide.dev/)** - Beautiful, consistent icon system
+- **[tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate)** - Tailwind CSS animations
+
+### Development Tools
+
+- **[Biome](https://biomejs.dev/)** - Fast formatter and linter
+- **[ESLint](https://eslint.org/)** - Code quality and style checking
+- **[PostCSS](https://postcss.org/)** - CSS processing and optimization
+
+## 🚀 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Project Status
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is currently under active development. The initial focus is on creating a modern, responsive band website, with the setlist tracking functionality to be implemented in future iterations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔜 Upcoming Features
 
-## Learn More
+- Setlist database and management
+- Performance statistics and visualizations
+- Show history and venue tracking
+- Fan interaction
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+More details and documentation will be added as the project evolves.
