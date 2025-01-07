@@ -27,6 +27,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<script async src="https://widget.seated.com/app.js" />
+			</head>
 			<body
 				className={`${montserrat.variable} ${poppins.variable} antialiased`}
 			>
