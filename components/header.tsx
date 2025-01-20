@@ -20,6 +20,10 @@ export default function Header() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	const styles = {
+		link: 'hover:text-gray-300 transition-all duration-200',
+	};
+
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-black text-white bg-opacity-75">
 			<div className="container mx-auto px-4">
@@ -38,15 +42,15 @@ export default function Header() {
 								priority
 							/>
 						</div>
-						<Link href="/" className="text-2xl font-bold">
+						<Link href="/" className="text-2xl font-bold --font-montserrat">
 							Mr. Please
 						</Link>
 					</div>
 					<nav className="hidden md:flex space-x-4">
-						<Link href="#latest-release" className="hover:text-gray-300">
+						<Link href="#latest-release" className={styles.link}>
 							Music
 						</Link>
-						<Link href="#tour-dates" className="hover:text-gray-300">
+						<Link href="#tour-dates" className={styles.link}>
 							Tour
 						</Link>
 
@@ -55,7 +59,7 @@ export default function Header() {
 								href="https://facebook.com/mrpleasemusic"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-gray-300"
+								className={styles.link}
 							>
 								<Facebook size={24} />
 							</a>
@@ -63,20 +67,20 @@ export default function Header() {
 								href="https://instagram.com/mrpleasemusic"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-gray-300"
+								className={styles.link}
 							>
 								<Instagram size={24} />
 							</a>
 							<a
-								href="https://youtube.com/mrpleasemusic"
+								href="https://www.youtube.com/@mrpleasemusic"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-gray-300"
+								className={styles.link}
 							>
 								<Youtube size={24} />
 							</a>
 						</div>
-						{/* <Link href="#gallery" className="hover:text-gray-300">
+						{/* <Link href="#gallery" className={styles.link}>
 							Gallery
 						</Link> */}
 					</nav>
@@ -94,21 +98,30 @@ export default function Header() {
 					<div className="container mx-auto px-4 flex flex-col space-y-2">
 						<Link
 							href="#latest-release"
-							className="hover:text-gray-300"
+							className={styles.link}
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Music
 						</Link>
 						<Link
 							href="#tour-dates"
-							className="hover:text-gray-300"
+							className={styles.link}
 							onClick={() => setIsMenuOpen(false)}
 						>
-							Tour
+							Shows
+						</Link>
+						<Link
+							href="https://mrplease.bandcamp.com/music"
+							target="_blank"
+							rel="noopener noreferrer"
+							className={styles.link}
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Live Recordings
 						</Link>
 						{/* <Link
 							href="#gallery"
-							className="hover:text-gray-300"
+							className={styles.link}
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Gallery
