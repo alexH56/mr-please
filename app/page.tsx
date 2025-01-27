@@ -139,12 +139,12 @@ export default function Home() {
       <footer className="bg-black text-white py-8 flex items-center justify-center">
         <div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center px-4">
           <p>
-            booking:{" "}
+            Contact:{" "}
             <a
-              href="mailto:mrpleaseofficial@gmail.com"
+              href="mailto:booking@mrpleasemusic.com"
               className="hover:opacity-80 hover:underline transition-all duration-200"
             >
-              mrpleaseofficial@gmail.com
+              booking@mrpleasemusic.com
             </a>
           </p>
           <p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
