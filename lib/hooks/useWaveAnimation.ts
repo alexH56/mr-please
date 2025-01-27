@@ -140,47 +140,47 @@ export default function useWaveAnimation(canvasId: string) {
 
     const resizeCanvas = () => {
       const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      dimensionsRef.current = { vw, vh };
+      const canvasHeight = 128; // 8rem max height
+      dimensionsRef.current = { vw, vh: canvasHeight };
 
       canvas.width = vw * resolution;
-      canvas.height = vh * resolution;
+      canvas.height = canvasHeight * resolution;
       canvas.style.width = `${vw}px`;
-      canvas.style.height = `${vh}px`;
+      canvas.style.height = `${canvasHeight}px`;
       context.scale(resolution, resolution);
     };
 
     resizeCanvas();
 
     const wave1 = createWave(context, {
-      amplitude: 50,
+      amplitude: 40,
       duration: 4,
       fillStyle: "rgba(103,58,183,0.8)",
       frequency: 2.5,
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
       segments: 100,
-      waveHeight: dimensionsRef.current.vh * 0.25,
+      waveHeight: 64, // 4rem
     });
 
     const wave2 = createWave(context, {
-      amplitude: 100,
+      amplitude: 80,
       duration: 2,
       fillStyle: "rgba(63,81,181,0.7)",
       frequency: 1.5,
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
       segments: 100,
-      waveHeight: dimensionsRef.current.vh * 0.25,
+      waveHeight: 64, // 4rem
     });
 
     wavesRef.current = [wave1, wave2];
 
     gsap.to(wavesRef.current, {
-      duration: 10,
-      waveHeight: dimensionsRef.current.vh / 2,
+      duration: 1,
+      waveHeight: 128, // 8rem
       ease: "sine.inOut",
-      repeat: -1,
+      repeat: 1,
       repeatDelay: 1,
       yoyo: true,
     });
