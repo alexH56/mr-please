@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-100">
+      <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-8 text-center">About</h2>
           <div className="max-w-3xl mx-auto text-lg">
@@ -36,7 +36,7 @@ export default function Home() {
 
       {/* Latest Release Section */}
 
-      <section id="latest-release" className="py-20 bg-white">
+      <section id="latest-release" className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-8 text-center">
             Latest Release
@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-gray-100">
+      <section id="gallery" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-8 text-center">Gallery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* Tour Dates Section */}
-      <section className="bg-white">
+      <section className="bg-gray-100">
         <TourDates />
       </section>
 
