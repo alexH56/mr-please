@@ -6,9 +6,8 @@ export default function TourDates() {
   useWaveAnimation("tour-waves");
 
   return (
-    <>
+    <section id="tour-dates" className="bg-gray-100">
       <canvas id="tour-waves" />
-
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">
           Upcoming Shows
@@ -21,6 +20,6 @@ export default function TourDates() {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 }

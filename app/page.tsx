@@ -8,47 +8,13 @@ import Gallery from "@/components/Gallery";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
-      {/* Hero Section */}
       <Hero />
 
-      {/* About Section */}
-      <section id="about" className="bg-gray-100">
-        <About />
-      </section>
+      <About />
+      <LatestRelease />
+      <Gallery />
+      <TourDates />
 
-      {/* Latest Release Section */}
-      <section id="latest-release" className="bg-gray-100">
-        <LatestRelease />
-      </section>
-
-      {/* Gallery Section */}
-      <section id="gallery" className="bg-gray-100">
-        <Gallery />
-      </section>
-
-      {/* Tour Dates Section */}
-      <section id="tour-dates" className="bg-gray-100">
-        <TourDates />
-      </section>
-
-      {/* Newsletter Signup Section */}
-      {/* <section className="py-20 bg-gray-800">
-				<div className="container mx-auto px-4">
-					<h2 className="text-4xl font-bold mb-8 text-center">
-						Join Our Mailing List
-					</h2>
-					<form className="max-w-md mx-auto flex gap-4">
-						<Input
-							type="email"
-							placeholder="Enter your email"
-							className="flex-grow"
-						/>
-						<Button type="submit">Subscribe</Button>
-					</form>
-				</div>
-			</section> */}
-
-      {/* Footer */}
       <footer className="bg-black text-white py-8 flex items-center justify-center">
         <div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center px-4">
           <p>
@@ -66,3 +32,20 @@ export default function Home() {
     </div>
   );
 }
+
+//  Newsletter Signup Section
+//    <section className="py-20 bg-gray-800">
+// 				<div className="container mx-auto px-4">
+// 					<h2 className="text-4xl font-bold mb-8 text-center">
+// 						Join Our Mailing List
+// 					</h2>
+// 					<form className="max-w-md mx-auto flex gap-4">
+// 						<Input
+// 							type="email"
+// 							placeholder="Enter your email"
+// 							className="flex-grow"
+// 						/>
+// 						<Button type="submit">Subscribe</Button>
+// 					</form>
+// 				</div>
+// 			</section>
