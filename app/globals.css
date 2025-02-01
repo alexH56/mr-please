@@ -95,8 +95,11 @@ div {
   }
 }
 
-/* CUSTOM STYLES */
+/*
+-------- CUSTOM STYLES --------
+*/
 
+/* Hover effect */
 @keyframes hvr-hang {
   0% {
     transform: translateY(8px);
@@ -131,11 +134,20 @@ div {
   animation-fill-mode: forwards;
   animation-direction: normal, alternate;
 }
+/* END hover effect */
 
 /* Floating head transition */
 .floating-head-transition {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+}
+/* END floating head transition */
+
+/* Waves */
+.waves {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .wave-container3 {
@@ -168,3 +180,4 @@ div {
     height: 19px;
   }
 }
+/* END Waves */
