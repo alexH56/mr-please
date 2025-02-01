@@ -160,7 +160,7 @@ export default function useWaveAnimation(canvasId: string) {
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
       segments: 100,
-      waveHeight: 64, // 4rem
+      waveHeight: 180, // 4rem
     });
 
     const wave2 = createWave(context, {
@@ -171,17 +171,17 @@ export default function useWaveAnimation(canvasId: string) {
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
       segments: 100,
-      waveHeight: 64, // 4rem
+      waveHeight: 180, // 4rem
     });
 
     wavesRef.current = [wave1, wave2];
 
     gsap.to(wavesRef.current, {
-      duration: 1,
-      waveHeight: 128, // 8rem
+      duration: 2,
+      waveHeight: 64, // 8rem
       ease: "sine.inOut",
-      repeat: 1,
-      repeatDelay: 1,
+      repeat: 0,
+      repeatDelay: 0,
       yoyo: true,
     });
 
