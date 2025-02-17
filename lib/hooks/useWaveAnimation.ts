@@ -41,6 +41,12 @@ interface Wave {
   kill: () => void;
 }
 
+interface WaveAnimationProps {
+  canvasId: string;
+  wave1Color: string;
+  wave2Color: string;
+}
+
 const createWave = (
   context: CanvasRenderingContext2D,
   options: WaveOptions = {}
@@ -124,7 +130,11 @@ const createWave = (
   return wave;
 };
 
-export default function useWaveAnimation(canvasId: string) {
+export default function useWaveAnimation({
+  canvasId,
+  wave1Color,
+  wave2Color,
+}: WaveAnimationProps) {
   const wavesRef = useRef<Wave[]>([]);
   const resizedRef = useRef(false);
   const dimensionsRef = useRef({ vw: 0, vh: 0 });
@@ -155,7 +165,7 @@ export default function useWaveAnimation(canvasId: string) {
     const wave1 = createWave(context, {
       amplitude: 40,
       duration: 4,
-      fillStyle: "rgba(103,58,183,0.8)",
+      fillStyle: wave1Color,
       frequency: 2.5,
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
@@ -166,7 +176,7 @@ export default function useWaveAnimation(canvasId: string) {
     const wave2 = createWave(context, {
       amplitude: 80,
       duration: 2,
-      fillStyle: "rgba(63,81,181,0.7)",
+      fillStyle: wave2Color,
       frequency: 1.5,
       width: dimensionsRef.current.vw,
       height: dimensionsRef.current.vh,
@@ -219,5 +229,5 @@ export default function useWaveAnimation(canvasId: string) {
       // biome-ignore lint/complexity/noForEach: <explanation>
       wavesRef.current.forEach((wave) => wave.kill());
     };
-  }, [canvasId]);
+  }, [canvasId, wave1Color, wave2Color]);
 }
