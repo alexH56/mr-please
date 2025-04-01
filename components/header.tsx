@@ -95,7 +95,7 @@ export default function Header() {
 			</div>
 			{isMenuOpen && (
 				<nav className="md:hidden bg-black py-4">
-					<div className="container mx-auto px-4 flex flex-col space-y-2">
+					<div className="container mx-auto px-4 flex flex-col items-end space-y-2">
 						<Link
 							href="#latest-release"
 							className={styles.link}
@@ -119,6 +119,35 @@ export default function Header() {
 						>
 							Live Recordings
 						</Link>
+						<div className="flex space-x-4 pt-4">
+							<a
+								href="https://facebook.com/mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.link}
+								onClick={() => setIsMenuOpen(false)}
+							>
+								<Facebook size={24} />
+							</a>
+							<a
+								href="https://instagram.com/mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.link}
+								onClick={() => setIsMenuOpen(false)}
+							>
+								<Instagram size={24} />
+							</a>
+							<a
+								href="https://www.youtube.com/@mrpleasemusic"
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.link}
+								onClick={() => setIsMenuOpen(false)}
+							>
+								<Youtube size={24} />
+							</a>
+						</div>
 						{/* <Link
 							href="#gallery"
 							className={styles.link}
