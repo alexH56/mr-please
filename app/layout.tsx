@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <Script src="https://widget.seated.com/app.js" />
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased bg-black`}
       >
         <Header />
         {children}
