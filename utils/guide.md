@@ -1,1 +1,0 @@
-This folder is used to house global extracted logic that can and will be reused throughout the breadth of the project. If the logic is isolated to single or few components, feel free to create a utils file in the appropriate folder for the component/component group.
