@@ -35,7 +35,7 @@ export default function Header() {
 							}`}
 						>
 							<Image
-								src="/please_head.png"
+								src="/images/please_head.png"
 								alt="Mr. Please"
 								fill
 								className="object-contain"
