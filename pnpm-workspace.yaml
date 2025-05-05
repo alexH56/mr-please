@@ -1,2 +1,5 @@
+packages:
+  - "." # Include the root directory as a package
+
 onlyBuiltDependencies:
-  - '@biomejs/biome'
+  - "@biomejs/biome"
