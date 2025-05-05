@@ -32,7 +32,6 @@ export default function Hero() {
 					alt="Background scenery"
 					fill
 					sizes="100vw"
-					quality={90}
 					placeholder="blur"
 					blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmVyc2lvbj0iMS4xIj4KICA8cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMzMzMiLz4KPC9zdmc+"
 					className="object-cover"
