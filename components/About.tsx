@@ -14,12 +14,14 @@ export default function About() {
 						</i>
 						<p>
 							Drawing on a wide range of influences, the group weaves a sonic
-							tapestry that defies easy categorization. Blending their funk and
-							indie rock foundation with sounds from across the world and back
-							again to those of their native Kentucky, their innovative
-							songwriting and dynamic performance have earned them spots at
-							Summer Camp and Backwoods Music Festivals, along with opening
-							slots for acts like SunSquabi and Dizgo.
+							tapestry that defies easy categorization.
+						</p>
+						<p>
+							Blending their funk and indie rock foundation with sounds from
+							across the world and back again to those of their native Kentucky,
+							their innovative songwriting and dynamic performance have earned
+							them spots at Summer Camp and Backwoods Music Festivals, along
+							with opening slots for acts like SunSquabi and Dizgo.
 						</p>
 						<p>
 							<b>In the studio,</b> the five-piece tackles subjects from the
@@ -52,7 +54,7 @@ export default function About() {
 						<p>
 							In the years since, the band has built a dedicated fanbase as they
 							continue to push boundaries and explore new sonic territory. Hot
-							on the heels of their debut album <i>Pleasant Tense</i>, Mr.
+							on the heels of their debut album <i>Pleasant Tense,</i> Mr.
 							Please is hitting the road to build their following—and
 							community—one jam at a time.
 						</p>
