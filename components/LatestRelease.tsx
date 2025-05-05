@@ -28,7 +28,7 @@ export default function LatestRelease() {
 							height={300}
 							className="rounded-lg shadow-lg"
 						/>
-						<div className="text-gray-800">
+						<div className="text-gray-800 text-center md:text-left">
 							<h3 className="text-2xl font-semibold mb-4">Pleasant Tense</h3>
 							<div className="flex flex-col gap-4 mb-6 text-lg">
 								<p>

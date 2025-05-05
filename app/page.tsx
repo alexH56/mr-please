@@ -16,8 +16,8 @@ export default function Home() {
 			{/* <Gallery /> */}
 
 			<footer className="bg-black text-white py-8 flex items-center justify-center">
-				<div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-end px-4">
-					<div className="flex flex-col gap-2">
+				<div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center md:items-end px-4">
+					<div className="flex flex-col gap-2 text-center md:text-left">
 						<p>
 							Photo by:{' '}
 							<a
@@ -37,7 +37,18 @@ export default function Home() {
 							</a>
 						</p>
 					</div>
-					<p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
+					<div className="flex flex-col gap-2 text-center md:text-left">
+						<p>
+							Website by:{' '}
+							<a
+								href="https://www.instagram.com/alex_hamilton56/"
+								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
+							>
+								Alex Hamilton
+							</a>
+						</p>
+						<p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
+					</div>
 				</div>
 			</footer>
 		</div>
