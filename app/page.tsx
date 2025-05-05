@@ -1,36 +1,47 @@
-import TourDates from "@/components/TourDates";
-import Hero from "@/components/hero";
-import About from "@/components/About";
-import LatestRelease from "@/components/LatestRelease";
+import TourDates from '@/components/TourDates';
+import Hero from '@/components/hero';
+import About from '@/components/About';
+import LatestRelease from '@/components/LatestRelease';
 // import Gallery from "@/components/Gallery";
 // import { Input } from '@/components/ui/input';
 
 export default function Home() {
-  return (
-    <div className="min-h-screen text-gray-100 bg-black">
-      <Hero />
+	return (
+		<div className="min-h-screen text-gray-100 bg-black">
+			<Hero />
 
-      <About />
-      <LatestRelease />
-      <TourDates />
-      {/* <Gallery /> */}
+			<About />
+			<LatestRelease />
+			<TourDates />
+			{/* <Gallery /> */}
 
-      <footer className="bg-black text-white py-8 flex items-center justify-center">
-        <div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center px-4">
-          <p>
-            Contact:{" "}
-            <a
-              href="mailto:booking@mrpleasemusic.com"
-              className="hover:opacity-80 hover:underline transition-all duration-200"
-            >
-              booking@mrpleasemusic.com
-            </a>
-          </p>
-          <p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
-        </div>
-      </footer>
-    </div>
-  );
+			<footer className="bg-black text-white py-8 flex items-center justify-center">
+				<div className="container mx-auto flex flex-col md:flex-row gap-4 justify-between items-end px-4">
+					<div className="flex flex-col gap-2">
+						<p>
+							Photo by:{' '}
+							<a
+								href="https://www.facebook.com/ojedaphotographer/"
+								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
+							>
+								Ojeda Photography
+							</a>
+						</p>
+						<p>
+							Contact:{' '}
+							<a
+								href="mailto:booking@mrpleasemusic.com"
+								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
+							>
+								booking@mrpleasemusic.com
+							</a>
+						</p>
+					</div>
+					<p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
+				</div>
+			</footer>
+		</div>
+	);
 }
 
 //  Newsletter Signup Section
