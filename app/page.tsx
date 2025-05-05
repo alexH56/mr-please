@@ -28,23 +28,23 @@ export default function Home() {
 							</a>
 						</p>
 						<p>
-							Contact:{' '}
-							<a
-								href="mailto:booking@mrpleasemusic.com"
-								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
-							>
-								booking@mrpleasemusic.com
-							</a>
-						</p>
-					</div>
-					<div className="flex flex-col gap-2 text-center md:text-left">
-						<p>
 							Website by:{' '}
 							<a
 								href="https://www.instagram.com/alex_hamilton56/"
 								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
 							>
 								Alex Hamilton
+							</a>
+						</p>
+					</div>
+					<div className="flex flex-col gap-2 text-center md:text-left">
+						<p>
+							Contact:{' '}
+							<a
+								href="mailto:booking@mrpleasemusic.com"
+								className="hover:opacity-80 underline hover:no-underline transition-all duration-200"
+							>
+								booking@mrpleasemusic.com
 							</a>
 						</p>
 						<p>&copy; {new Date().getFullYear()} Mr. Please Entertainment</p>
