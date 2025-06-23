@@ -14,9 +14,9 @@ export default function TourDates() {
 			<canvas id="tour-waves" className="bg-[#F5D226]" />
 			<div className="bg-[#2888D2] py-12 ">
 				<div className="container mx-auto px-4">
-					<h2 className="text-4xl font-bold mb-8 text-center">
+					<h1 className="text-4xl font-bold mb-8 text-center">
 						Upcoming Shows
-					</h2>
+					</h1>
 					<div className="space-y-4">
 						<div
 							id="seated-55fdf2c0"

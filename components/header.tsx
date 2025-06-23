@@ -36,7 +36,7 @@ export default function Header() {
 						>
 							<Image
 								src="/images/please_head.png"
-								alt="Mr. Please"
+								alt="Mr. Please Logo"
 								fill
 								className="object-contain"
 								priority
@@ -60,6 +60,7 @@ export default function Header() {
 								target="_blank"
 								rel="noopener noreferrer"
 								className={styles.link}
+								aria-label="Facebook"
 							>
 								<Facebook size={24} />
 							</a>
@@ -68,6 +69,7 @@ export default function Header() {
 								target="_blank"
 								rel="noopener noreferrer"
 								className={styles.link}
+								aria-label="Instagram"
 							>
 								<Instagram size={24} />
 							</a>
@@ -76,6 +78,7 @@ export default function Header() {
 								target="_blank"
 								rel="noopener noreferrer"
 								className={styles.link}
+								aria-label="YouTube"
 							>
 								<Youtube size={24} />
 							</a>
@@ -88,6 +91,7 @@ export default function Header() {
 						type="button"
 						className="md:hidden"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
+						aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
 					>
 						{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
 					</button>
@@ -126,6 +130,7 @@ export default function Header() {
 								rel="noopener noreferrer"
 								className={styles.link}
 								onClick={() => setIsMenuOpen(false)}
+								aria-label="Facebook"
 							>
 								<Facebook size={24} />
 							</a>
@@ -135,6 +140,7 @@ export default function Header() {
 								rel="noopener noreferrer"
 								className={styles.link}
 								onClick={() => setIsMenuOpen(false)}
+								aria-label="Instagram"
 							>
 								<Instagram size={24} />
 							</a>
@@ -144,6 +150,7 @@ export default function Header() {
 								rel="noopener noreferrer"
 								className={styles.link}
 								onClick={() => setIsMenuOpen(false)}
+								aria-label="YouTube"
 							>
 								<Youtube size={24} />
 							</a>

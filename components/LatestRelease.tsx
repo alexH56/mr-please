@@ -17,9 +17,9 @@ export default function LatestRelease() {
 			<canvas id="release-waves" className="bg-[#6133B8]" />
 			<div className="bg-[#F5D226]">
 				<div className="container mx-auto px-4 py-12">
-					<h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
+					<h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
 						Latest Release
-					</h2>
+					</h1>
 					<div className="flex flex-col md:flex-row items-center justify-center gap-8">
 						<Image
 							src="/images/pleasant_tense.jpg"
@@ -29,7 +29,7 @@ export default function LatestRelease() {
 							className="rounded-lg shadow-lg"
 						/>
 						<div className="text-gray-800 text-center md:text-left">
-							<h3 className="text-2xl font-semibold mb-4">Pleasant Tense</h3>
+							<h2 className="text-2xl font-semibold mb-4">Pleasant Tense</h2>
 							<div className="flex flex-col gap-4 mb-6 text-lg">
 								<p>
 									Pleasant Tense is a labor of love meant to take listeners on a
