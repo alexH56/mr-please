@@ -29,7 +29,7 @@ export default function Hero() {
 				{/* Background Image */}
 				<Image
 					src="/images/hero.jpg"
-					alt="Background scenery"
+					alt="Large banner image of Mr. Please performing to a crowd"
 					fill
 					sizes="100vw"
 					placeholder="blur"
