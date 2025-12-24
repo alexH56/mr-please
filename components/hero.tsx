@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 
 export default function Hero() {

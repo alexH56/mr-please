@@ -1,9 +1,9 @@
 'use client';
 
-import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 
 export default function LatestRelease() {
 	useWaveAnimation({
