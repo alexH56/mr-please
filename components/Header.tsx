@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Facebook, Instagram, Menu, X, Youtube } from 'lucide-react';
 import Image from 'next/image';
-import { Menu, X, Facebook, Instagram, Youtube } from 'lucide-react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function Header() {
 						type="button"
 						className="md:hidden"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+						aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
 					>
 						{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
 					</button>

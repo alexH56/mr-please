@@ -25,7 +25,7 @@ export default function About() {
 						</p>
 						<p>
 							<b>In the studio,</b> the five-piece tackles subjects from the
-							serious to sexy to the absurd (and sometimes all at once). Not
+							serious to the sexy to the absurd (and sometimes all at once). Not
 							content to limit themselves in style or genre, the group's only
 							goal is to craft songs with infectious melodies, memorable lyrics,
 							and grooves that make you want to 🕺 <i>dance</i> 💃.

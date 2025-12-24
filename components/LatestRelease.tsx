@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import useWaveAnimation from "@/lib/hooks/useWaveAnimation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 
 export default function LatestRelease() {
 	useWaveAnimation({
-		canvasId: "release-waves",
-		wave1Color: "rgba(255,215,0,0.8)",
-		wave2Color: "rgba(245,205,0,0.7)",
+		canvasId: 'release-waves',
+		wave1Color: 'rgba(255,215,0,0.8)',
+		wave2Color: 'rgba(245,205,0,0.7)',
 	});
 
 	return (

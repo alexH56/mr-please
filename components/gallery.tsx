@@ -1,7 +1,7 @@
 'use client';
 
-import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 import Image from 'next/image';
+import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
 
 export default function Gallery() {
 	useWaveAnimation({

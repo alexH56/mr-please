@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Montserrat, Poppins } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/header';
 import Script from 'next/script';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -29,12 +30,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<Script src="https://widget.seated.com/app.js" />
 			<body
-				className={`${montserrat.variable} ${poppins.variable} antialiased bg-black dark`}
+				className={`${montserrat.variable} ${poppins.variable} antialiased bg-black`}
 			>
+				<Script src="https://widget.seated.com/app.js" />
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
