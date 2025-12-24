@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import useWaveAnimation from "@/lib/hooks/useWaveAnimation";
 
 export default function LatestRelease() {
 	useWaveAnimation({
-		canvasId: 'release-waves',
-		wave1Color: 'rgba(255,215,0,0.8)',
-		wave2Color: 'rgba(245,205,0,0.7)',
+		canvasId: "release-waves",
+		wave1Color: "rgba(255,215,0,0.8)",
+		wave2Color: "rgba(245,205,0,0.7)",
 	});
 
 	return (
@@ -17,9 +17,9 @@ export default function LatestRelease() {
 			<canvas id="release-waves" className="bg-[#6133B8]" />
 			<div className="bg-[#F5D226]">
 				<div className="container mx-auto px-4 py-12">
-					<h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
+					<h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
 						Latest Release
-					</h2>
+					</h1>
 					<div className="flex flex-col md:flex-row items-center justify-center gap-8">
 						<Image
 							src="/images/pleasant_tense.jpg"

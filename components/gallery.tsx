@@ -15,9 +15,9 @@ export default function Gallery() {
 			<canvas id="gallery-waves" className="bg-[#F5D226]" />
 			<div className="bg-[#9C7FCF]">
 				<div className="container mx-auto px-4 py-12">
-					<h2 className="text-4xl font-bold mb-8 text-center text-white">
+					<h1 className="text-4xl font-bold mb-8 text-center text-white">
 						Gallery
-					</h2>
+					</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 						<div className="relative aspect-square">
 							<Image

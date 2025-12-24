@@ -48,7 +48,7 @@ export default function Hero() {
 					>
 						<Image
 							src="/images/please_head.png"
-							alt="Overlay image"
+							alt="Mr. Please Logo overlaid on the image of the band playing"
 							fill
 							sizes="(max-width: 768px) 25vw, (max-width: 1200px) 20vw, 16vw"
 							className="object-contain hvr-hang"
