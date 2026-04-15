@@ -42,14 +42,14 @@ export default function About() {
 						<p>
 							In early 2020, the group was formed by a twist of fate. Guitarist
 							& vocalist <b>Max Voorhees</b> was living abroad in Asia and,
-							while on a visit home to Louisville, gathered friends{' '}
-							<b>Ryan Chadwick</b> (drums/vocals), <b>Alex Hamilton</b>{' '}
-							(guitar/vocals), and <b>Jarrod McClellan</b> (bass/vocals) for a
-							jam session. Days later, all flights back were canceled due to the
-							Covid-19 pandemic, and what was supposed to be a one-off jam
-							quickly became a serious project. After the world opened back up
-							and they began playing shows, the gang soon added{' '}
-							<b>Nico Extra</b> (keyboard/vocals) to round out their lineup.
+							while on a visit home to Louisville, met with friends{' '}
+							<b>Ryan Chadwick</b> (drums/vocals) and <b>Alex Hamilton</b>{' '}
+							(guitar/vocals) for a jam session. Days later, all flights back
+							were canceled due to the Covid-19 pandemic, and what was supposed
+							to be a one-off jam quickly became a serious project. After the
+							world opened back up and they began playing shows, the gang soon
+							added <b>Nico Extra</b> (keyboard/vocals) to round out their
+							lineup.
 						</p>
 						<p>
 							In the years since, the band has built a dedicated fanbase as they
