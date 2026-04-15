@@ -1,18 +1,9 @@
 'use client';
 
-import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
-
 export default function TourDates() {
-	useWaveAnimation({
-		canvasId: 'tour-waves',
-		wave1Color: 'rgba(30,135,215,0.8)',
-		wave2Color: 'rgba(25,120,195,0.7)',
-	});
-
 	return (
-		<section id="tour-dates" className="t">
-			<canvas id="tour-waves" className="bg-[#F5D226]" />
-			<div className="bg-[#2888D2] py-12 ">
+		<section id="tour-dates">
+			<div className="bg-[#6133B8] py-12 ">
 				<div className="container mx-auto px-4">
 					<h1 className="text-4xl font-bold mb-8 text-center">
 						Upcoming Shows
