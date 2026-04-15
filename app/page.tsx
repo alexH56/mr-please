@@ -10,9 +10,9 @@ export default function Home() {
 		<div className="min-h-screen text-gray-100 bg-black">
 			<Hero />
 
-			<About />
-			<LatestRelease />
 			<TourDates />
+			<LatestRelease />
+			<About />
 			{/* <Gallery /> */}
 		</div>
 	);

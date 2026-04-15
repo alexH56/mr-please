@@ -1,9 +1,18 @@
 'use client';
 
+import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
+
 export default function About() {
+	useWaveAnimation({
+		canvasId: 'about-waves-bottom',
+		wave1Color: 'rgba(30,135,215,0.8)',
+		wave2Color: 'rgba(25,120,195,0.7)',
+	});
+
 	return (
 		<section id="about">
-			<div className="bg-[#6133B8] pt-6 pb-12">
+			<canvas id="about-waves-bottom" className="bg-[#F5D226]" />
+			<div className="bg-[#2888D2] py-12">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col gap-4 max-w-4xl mx-auto text-lg text-[#F8F2FF]">
 						<h1 className="sr-only">About</h1>
