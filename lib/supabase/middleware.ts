@@ -1,24 +1,26 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+import { getSupabaseEnv } from '@/lib/supabase/env';
 
 export async function updateSession(request: NextRequest) {
 	let supabaseResponse = NextResponse.next({
 		request,
 	});
 
-	const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-	const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+	const { url, anonKey } = getSupabaseEnv();
 
-	if (!supabaseUrl || !supabaseAnonKey) {
-		throw new Error('Missing Supabase environment variables');
-	}
-
-	const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+	const supabase = createServerClient(url, anonKey, {
 		cookies: {
 			getAll() {
 				return request.cookies.getAll();
 			},
-			setAll(cookiesToSet) {
+			setAll(
+				cookiesToSet: Array<{
+					name: string;
+					value: string;
+					options?: Record<string, unknown>;
+				}>,
+			) {
 				for (const { name, value } of cookiesToSet) {
 					request.cookies.set(name, value);
 				}

@@ -3,13 +3,19 @@
 import { Facebook, Instagram, Menu, X, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolledPast, setIsScrolledPast] = useState(false);
+	const pathname = usePathname();
+	const isHomepage = pathname === '/';
+	const showLogo = !isHomepage || isScrolledPast;
 
 	useEffect(() => {
+		if (!isHomepage) return;
+
 		const handleScroll = () => {
 			const scrollPosition = window.scrollY;
 			const heroHeight = window.innerHeight * 0.8; // 80vh
@@ -18,7 +24,7 @@ export default function Header() {
 
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [isHomepage]);
 
 	const styles = {
 		link: 'hover:text-gray-300 transition-all duration-200',
@@ -31,7 +37,7 @@ export default function Header() {
 					<div className="flex items-center gap-4">
 						<div
 							className={`relative w-10 aspect-square floating-head-transition ${
-								isScrolledPast ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+								showLogo ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
 							}`}
 						>
 							<Image
