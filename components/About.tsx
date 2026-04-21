@@ -1,9 +1,18 @@
 'use client';
 
+import useWaveAnimation from '@/lib/hooks/useWaveAnimation';
+
 export default function About() {
+	useWaveAnimation({
+		canvasId: 'about-waves-bottom',
+		wave1Color: 'rgba(30,135,215,0.8)',
+		wave2Color: 'rgba(25,120,195,0.7)',
+	});
+
 	return (
 		<section id="about">
-			<div className="bg-[#6133B8] pt-6 pb-12">
+			<canvas id="about-waves-bottom" className="bg-[#F5D226]" />
+			<div className="bg-[#2888D2] py-12">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col gap-4 max-w-4xl mx-auto text-[#F8F2FF]">
 						<h1 className="sr-only">About</h1>
@@ -43,20 +52,20 @@ export default function About() {
 							In early 2020, the group was formed by a twist of fate. Guitarist
 							& vocalist <b>Max Voorhees</b> was living abroad in Asia and,
 							while on a visit home to Louisville, met with friends{' '}
-							<b>Ryan Chadwick</b> (drums/vocals), <b>Alex Hamilton</b>{' '}
-							(guitar/vocals), and <b>Jarrod McClellan</b> (bass/vocals) for a
-							jam session. Days later, all flights back were canceled due to the
-							Covid-19 pandemic, and what was supposed to be a one-off jam
-							quickly became a serious project. After the world opened back up
-							and they began playing shows, the gang soon added{' '}
-							<b>Nico Extra</b> (keyboard/vocals) to round out their lineup.
+							<b>Ryan Chadwick</b> (drums/vocals) and <b>Alex Hamilton</b>{' '}
+							(guitar/vocals) for a jam session. Days later, all flights back
+							were canceled due to the Covid-19 pandemic, and what was supposed
+							to be a one-off jam quickly became a serious project. After the
+							world opened back up and they began playing shows, the gang soon
+							added <b>Nico Extra</b> (keyboards/vocals) to round out their
+							lineup.
 						</p>
 						<p>
 							In the years since, the band has built a dedicated fanbase as they
-							continue to push boundaries and explore new sonic territory. Hot
-							on the heels of their debut album <i>Pleasant Tense,</i> Mr.
-							Please is hitting the road to build their following—and
-							community—one jam at a time.
+							continue to push boundaries and explore new sonic territory. On
+							the back of their debut album <i>Pleasant Tense,</i> Mr. Please is
+							hitting the road to build their following—and community—one jam at
+							a time.
 						</p>
 					</div>
 				</div>

@@ -51,7 +51,10 @@ export default function Header() {
 							Music
 						</Link>
 						<Link href="#tour-dates" className={styles.link}>
-							Tour
+							Shows
+						</Link>
+						<Link href="#about" className={styles.link}>
+							About
 						</Link>
 
 						<div className="flex space-x-4">
@@ -113,6 +116,13 @@ export default function Header() {
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Shows
+						</Link>
+						<Link
+							href="#about"
+							className={styles.link}
+							onClick={() => setIsMenuOpen(false)}
+						>
+							About
 						</Link>
 						<Link
 							href="https://mrplease.bandcamp.com/music"
