@@ -30,10 +30,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<Script src="https://widget.seated.com/app.js" />
 			<body
 				className={`${montserrat.variable} ${poppins.variable} antialiased bg-black`}
 			>
+				<Script src="https://widget.seated.com/app.js" />
 				<Header />
 				{children}
 				<Footer />

@@ -29,8 +29,8 @@ export default function LatestRelease() {
 							className="rounded-lg shadow-lg"
 						/>
 						<div className="text-gray-800 text-center md:text-left">
-							<h2 className="text-2xl font-semibold mb-4">Pleasant Tense</h2>
-							<div className="flex flex-col gap-4 mb-6 text-lg">
+							<h3 className="text-2xl font-semibold mb-4">Pleasant Tense</h3>
+							<div className="flex flex-col gap-4 mb-6">
 								<p>
 									Pleasant Tense is a labor of love meant to take listeners on a
 									genre-defying journey down a rabbit hole of self discovery,

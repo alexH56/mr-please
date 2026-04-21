@@ -9,13 +9,19 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
+		"@radix-ui/react-checkbox": "^1.1.2",
+		"@radix-ui/react-dropdown-menu": "^2.1.2",
+		"@radix-ui/react-label": "^2.1.1",
 		"@radix-ui/react-slot": "^1.1.1",
+		"@supabase/ssr": "^0.8.0",
+		"@supabase/supabase-js": "^2.89.0",
 		"biome": "^0.3.3",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"gsap": "^3.12.7",
 		"lucide-react": "^0.469.0",
 		"next": "16.0.7",
+		"next-themes": "^0.4.4",
 		"react": "19.2.1",
 		"react-dom": "19.2.1",
 		"tailwind-merge": "^2.6.0",
@@ -35,6 +41,11 @@
 		"overrides": {
 			"@types/react": "19.2.7",
 			"@types/react-dom": "19.2.3"
-		}
+		},
+		"onlyBuiltDependencies": [
+			"@biomejs/biome",
+			"core-js",
+			"sharp"
+		]
 	}
 }
