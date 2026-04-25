@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 import { getSupabaseEnv } from '@/lib/supabase/env';
+import type { Database } from '@/lib/supabase/types';
 
 export async function updateSession(request: NextRequest) {
 	let supabaseResponse = NextResponse.next({
@@ -9,7 +10,7 @@ export async function updateSession(request: NextRequest) {
 
 	const { url, anonKey } = getSupabaseEnv();
 
-	const supabase = createServerClient(url, anonKey, {
+	const supabase = createServerClient<Database>(url, anonKey, {
 		cookies: {
 			getAll() {
 				return request.cookies.getAll();
@@ -44,16 +45,26 @@ export async function updateSession(request: NextRequest) {
 		data: { user },
 	} = await supabase.auth.getUser();
 
+	const isAdminRoute = request.nextUrl.pathname.startsWith('/admin');
+
 	if (
 		request.nextUrl.pathname !== '/' &&
 		!user &&
-		!request.nextUrl.pathname.startsWith('/login') &&
 		!request.nextUrl.pathname.startsWith('/auth')
 	) {
 		// no user, potentially respond by redirecting the user to the login page
 		const url = request.nextUrl.clone();
 		url.pathname = '/auth/login';
 		return NextResponse.redirect(url);
+	}
+
+	if (isAdminRoute && user) {
+		const role = (user.app_metadata as { role?: string } | null)?.role;
+		if (role !== 'admin') {
+			const url = request.nextUrl.clone();
+			url.pathname = '/';
+			return NextResponse.redirect(url);
+		}
 	}
 
 	// IMPORTANT: You *must* return the supabaseResponse object as it is.
