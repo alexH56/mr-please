@@ -4,9 +4,9 @@ import { Facebook, Instagram, Menu, X, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
-export default function Header() {
+export default function Header({ authSlot }: { authSlot?: ReactNode }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolledPast, setIsScrolledPast] = useState(false);
 	const pathname = usePathname();
@@ -52,7 +52,7 @@ export default function Header() {
 							Mr. Please
 						</Link>
 					</div>
-					<nav className="hidden md:flex space-x-4">
+					<nav className="hidden md:flex items-center space-x-4">
 						<Link href="#latest-release" className={styles.link}>
 							Music
 						</Link>
@@ -92,9 +92,7 @@ export default function Header() {
 								<Youtube size={24} />
 							</a>
 						</div>
-						{/* <Link href="#gallery" className={styles.link}>
-							Gallery
-						</Link> */}
+						{authSlot && <div className="ml-2">{authSlot}</div>}
 					</nav>
 					<button
 						type="button"
@@ -171,13 +169,7 @@ export default function Header() {
 								<Youtube size={24} />
 							</a>
 						</div>
-						{/* <Link
-							href="#gallery"
-							className={styles.link}
-							onClick={() => setIsMenuOpen(false)}
-						>
-							Gallery
-						</Link> */}
+						{authSlot && <div className="pt-4">{authSlot}</div>}
 					</div>
 				</nav>
 			)}

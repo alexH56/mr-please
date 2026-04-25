@@ -118,7 +118,7 @@ const createWave = (
 			this.context.fill();
 		},
 		kill: function () {
-			this.tweens.forEach((tween) => tween.kill());
+			for (const tween of this.tweens) tween.kill();
 			this.tweens = [];
 			this.points = [];
 		},
@@ -213,7 +213,7 @@ export default function useWaveAnimation({
 				dimensionsRef.current.vh,
 			);
 			context.globalCompositeOperation = 'soft-light';
-			wavesRef.current.forEach((wave) => wave.draw());
+			for (const wave of wavesRef.current) wave.draw();
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -222,7 +222,7 @@ export default function useWaveAnimation({
 		return () => {
 			window.removeEventListener('resize', handleResize);
 			gsap.ticker.remove(ticker);
-			wavesRef.current.forEach((wave) => wave.kill());
+			for (const wave of wavesRef.current) wave.kill();
 		};
 	}, [canvasId, wave1Color, wave2Color]);
 }
