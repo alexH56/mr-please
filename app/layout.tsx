@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { AuthNav } from '@/components/auth-button';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { Toaster } from '@/components/ui/sonner';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
 				<Header authSlot={<AuthNav />} />
 				{children}
 				<Footer />
+				<Toaster />
 			</body>
 		</html>
 	);

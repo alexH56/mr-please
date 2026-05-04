@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { LogoutButton } from '@/components/logout-button';
 import { Button } from '@/components/ui/button';
+import { navLinkStyle } from '@/lib/styles';
 import { isAdminUser } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 
@@ -28,11 +29,11 @@ export async function AuthNav() {
 
 	return (
 		<div className="flex items-center gap-3 text-sm">
+			<Link href="/profile" className={navLinkStyle}>
+				Profile
+			</Link>
 			{admin && (
-				<Link
-					href="/admin"
-					className="hover:text-gray-300 transition-all duration-200"
-				>
+				<Link href="/admin" className={navLinkStyle}>
 					Admin
 				</Link>
 			)}
